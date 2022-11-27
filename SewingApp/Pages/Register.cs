@@ -8,6 +8,8 @@ namespace SewingApp.Pages
 {
     public partial class Register : UserControl
     {
+        public static Regex PasswordRegex = new Regex(@"(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^]).*[A-Za-z\d!@#$%^]{6,}", RegexOptions.None);
+
         public Register()
         {
             InitializeComponent();
@@ -15,48 +17,63 @@ namespace SewingApp.Pages
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Regex checkSpace = new Regex(@"\s", RegexOptions.None);
-            Regex checkPassword = new Regex(@"(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^]).*[A-Za-z\d!@#$%^]{6,}", RegexOptions.None);
+            string login = textBox4.Text, 
+                passwd = textBox3.Text, 
+                _passwd = textBox5.Text;
 
-            if ((textBox4.Text != string.Empty) &&
-                (textBox3.Text == textBox5.Text) &&
-                (!checkSpace.IsMatch(textBox3.Text) &&
-                checkPassword.IsMatch(textBox5.Text)))
+
+            if (
+                string.IsNullOrEmpty(login)
+                || string.IsNullOrEmpty(passwd)
+                || string.IsNullOrEmpty(_passwd)
+            )
             {
-                if (Globals.DB.User.Where(u => u.Login == textBox3.Text).FirstOrDefault() == null)
-                {
-                    User user = new User();
-                    user.Login = textBox4.Text;
-                    user.Password = textBox3.Text;
-                    user.IdRole = 1;
-                    Globals.DB.User.Add(user);
-                    Globals.DB.SaveChanges();
-
-                    MessageBox.Show("Регистрация прошла успешно! Теперь вы можете войти в систему используя свой логин и пароль.");
-                    //textBox3.Text = string.Empty;
-                    //textBox4.Text = string.Empty;
-                    //textBox5.Text = string.Empty;
-                    MainForm.Instance.PrimaryControl = new Pages.Auth();
-                }
-                else
-                    MessageBox.Show("Данный логин уже занят.");
+                MessageBox.Show("Одно из полей пустое!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            else if (Globals.DB.User.Where(u => u.Login == login).FirstOrDefault() != null)
+            {
+                MessageBox.Show("Данный логин уже существует!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (PasswordRegex.IsMatch(passwd))
             {
                 MessageBox.Show(@"\
 Ошибка заполнения данных. 
-Необходимо задать логин.
 Пароль  должен  отвечать  следующим требованиям: 
 •  Минимум 6 символов 
 •  Минимум 1 прописная буква 
 •  Минимум 1 цифра 
-•  Минимум один символ из набора: ! @ # $ % ^.");
+•  Минимум один символ из набора: ! @ # $ % ^.", 
+                "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            else if (passwd != _passwd)
+            {
+                MessageBox.Show("Пароль и подтверждение не совпадают!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            User user = new User { 
+                Login = login,
+                Password = passwd,
+                IdRole = 1
+            };
+            Globals.DB.User.Add(user);
+            Globals.DB.SaveChanges();
+
+            MessageBox.Show(
+                "Регистрация прошла успешно! \nТеперь вы можете войти в систему используя свой логин и пароль.", 
+                "Успешно!", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+
+            Globals.NavigateTo(new Pages.Auth());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm.Instance.PrimaryControl = new Pages.Auth();
+            Globals.NavigateTo(new Pages.Auth());
         }
     }
 }
