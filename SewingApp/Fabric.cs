@@ -11,7 +11,8 @@ namespace SewingApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Fabric
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,8 @@ namespace SewingApp
             this.ScrapRule = new HashSet<ScrapRule>();
             this.FabricStock = new HashSet<FabricStock>();
         }
-    
+
+        [DisplayName("Номер")]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Color { get; set; }

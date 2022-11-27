@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
 
 namespace SewingApp.Pages
 {
@@ -17,7 +9,7 @@ namespace SewingApp.Pages
         {
             InitializeComponent();
 
-            this.panel1.Controls.Add(new OrderListView());
+            panel1.SetPrimaryControl(new OrdersList());
         }
 
         private void CustomerViewMenu_Load(object sender, EventArgs e)
