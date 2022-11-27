@@ -49,6 +49,7 @@ namespace SewingApp.Pages
             this.Controls.Add(this.dgProductList);
             this.Name = "ProductList";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.ProductList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProductList)).EndInit();
             this.ResumeLayout(false);
 

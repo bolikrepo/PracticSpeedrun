@@ -28,6 +28,8 @@ namespace SewingApp.Pages
             }
             else
             {
+                Globals.Context.CurrentUser = user;
+
                 switch (user.IdRole)
                 {
                     case 1:

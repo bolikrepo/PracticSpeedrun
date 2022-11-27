@@ -16,5 +16,11 @@ namespace SewingApp.Pages
         {
             InitializeComponent();
         }
+
+        private void Manager_Load(object sender, EventArgs e)
+        {
+            tabPage1.SetPrimaryControl(new Pages.Orders());
+            tabPage2.SetPrimaryControl(new Pages.ProductList());
+        }
     }
 }

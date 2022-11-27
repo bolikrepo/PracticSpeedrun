@@ -73,6 +73,7 @@ namespace SewingApp.Pages
             this.Controls.Add(this.tabControl1);
             this.Name = "Manager";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.Manager_Load);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

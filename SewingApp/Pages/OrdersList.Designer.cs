@@ -29,75 +29,90 @@ namespace SewingApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.bgOrders = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bgOrders)).BeginInit();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.dgOrders = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnCreateProduct = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnCreateOrder
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(0, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Оформить заказ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCreateOrder.Location = new System.Drawing.Point(0, 4);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(163, 28);
+            this.btnCreateOrder.TabIndex = 3;
+            this.btnCreateOrder.Text = "Оформить заказ";
+            this.btnCreateOrder.UseVisualStyleBackColor = true;
             // 
-            // bgOrders
+            // dgOrders
             // 
-            this.bgOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bgOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bgOrders.Location = new System.Drawing.Point(0, 38);
-            this.bgOrders.Name = "bgOrders";
-            this.bgOrders.Size = new System.Drawing.Size(800, 409);
-            this.bgOrders.TabIndex = 2;
+            this.dgOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgOrders.Location = new System.Drawing.Point(0, 38);
+            this.dgOrders.Name = "dgOrders";
+            this.dgOrders.Size = new System.Drawing.Size(800, 409);
+            this.dgOrders.TabIndex = 2;
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(650, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 28);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Назад";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnBack.Location = new System.Drawing.Point(650, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(147, 28);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Назад";
+            this.btnBack.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCreateProduct
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(169, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 28);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Новое изделие";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCreateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCreateProduct.Location = new System.Drawing.Point(169, 4);
+            this.btnCreateProduct.Name = "btnCreateProduct";
+            this.btnCreateProduct.Size = new System.Drawing.Size(163, 28);
+            this.btnCreateProduct.TabIndex = 5;
+            this.btnCreateProduct.Text = "Новое изделие";
+            this.btnCreateProduct.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(338, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Заказ:";
             // 
             // OrdersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.bgOrders);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCreateProduct);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnCreateOrder);
+            this.Controls.Add(this.dgOrders);
             this.Name = "OrdersList";
             this.Size = new System.Drawing.Size(800, 450);
-            ((System.ComponentModel.ISupportInitialize)(this.bgOrders)).EndInit();
+            this.Load += new System.EventHandler(this.OrdersList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView bgOrders;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.DataGridView dgOrders;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnCreateProduct;
+        private System.Windows.Forms.Label label1;
     }
 }

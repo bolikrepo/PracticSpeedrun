@@ -33,9 +33,10 @@ namespace SewingApp.Pages
                     Globals.DB.SaveChanges();
 
                     MessageBox.Show("Регистрация прошла успешно! Теперь вы можете войти в систему используя свой логин и пароль.");
-                    textBox3.Text = string.Empty;
-                    textBox4.Text = string.Empty;
-                    textBox5.Text = string.Empty;
+                    //textBox3.Text = string.Empty;
+                    //textBox4.Text = string.Empty;
+                    //textBox5.Text = string.Empty;
+                    MainForm.Instance.PrimaryControl = new Pages.Auth();
                 }
                 else
                     MessageBox.Show("Данный логин уже занят.");

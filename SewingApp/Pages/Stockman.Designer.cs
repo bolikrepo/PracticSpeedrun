@@ -138,6 +138,7 @@ namespace SewingApp.Pages
             this.Controls.Add(this.tabControl1);
             this.Name = "Stockman";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.Stockman_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgFabric)).EndInit();

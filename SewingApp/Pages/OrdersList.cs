@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -15,6 +9,11 @@ namespace SewingApp.Pages
         public OrdersList()
         {
             InitializeComponent();
+        }
+
+        private void OrdersList_Load(object sender, EventArgs e)
+        {
+            dgOrders.DataSource = Globals.DB.OrderItem.Local.ToList();
         }
     }
 }

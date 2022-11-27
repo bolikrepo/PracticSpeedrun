@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -17,5 +10,10 @@ namespace SewingApp.Pages
             InitializeComponent();
         }
 
+        private void Stockman_Load(object sender, EventArgs e)
+        {
+            dgFabric.DataSource = Globals.DB.Fabric.Local;
+            dgFurniture.DataSource = Globals.DB.Furniture.Local;
+        }
     }
 }

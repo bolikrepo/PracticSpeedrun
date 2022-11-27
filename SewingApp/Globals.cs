@@ -7,6 +7,20 @@ namespace SewingApp
     {
         public static SewingDBEntities DB { get; } = new SewingDBEntities();
 
+        public static void NavigateTo(UserControl value)
+        {
+            MainForm.Instance.PrimaryControl = value;
+        }
+
+        public static class Context
+        {
+            public static User CurrentUser { get; set; }
+            public static Order CurrentOrder { get; set; }
+        }
+    }
+
+    public static class Extensions
+    {
 
         public static Control GetPrimaryControl(this Control control)
             => control.Controls.Cast<Control>().FirstOrDefault();
@@ -17,5 +31,6 @@ namespace SewingApp
             control.Controls.Add(value);
             value.Parent = control;
         }
+
     }
 }
