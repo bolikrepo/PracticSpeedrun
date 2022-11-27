@@ -53,5 +53,27 @@ namespace SewingApp.Pages
                 e.ThrowException = false;
             }
         }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["PaymentButton"].Index)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    DialogResult dr = MessageBox.Show("Вы точно хотите оплатить заказ?",
+                      "Оплата заказа", MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.Yes) { 
+
+                        int orderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                        Order order = Globals.DB.Order.Where(u => u.IdUser == 8 && u.Id == orderID).FirstOrDefault();
+                        order.IdState = 6;
+
+                        Globals.DB.SaveChanges();
+
+                        dataGridView1.DataSource = Globals.DB.Order.Where(u => u.IdUser == 8).ToList();
+                    }
+                }
+            }
+        }
     }
 }
