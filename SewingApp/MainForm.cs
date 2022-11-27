@@ -26,6 +26,17 @@ namespace SewingApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(new Pages.Auth(this.panel1));
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

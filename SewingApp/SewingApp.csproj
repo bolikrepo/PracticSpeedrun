@@ -104,6 +104,12 @@
     <Compile Include="Pages\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CustomerViewMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerViewMenu.Designer.cs">
+      <DependentUpon>CustomerViewMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProductList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,11 @@
     <Compile Include="ScrapRule.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="SewingDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SewingDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Unit.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -141,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CustomerViewMenu.resx">
+      <DependentUpon>CustomerViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
@@ -174,6 +188,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SewingDBDataSet.xsc">
+      <DependentUpon>SewingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SewingDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SewingDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SewingDBDataSet.xss">
+      <DependentUpon>SewingDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
