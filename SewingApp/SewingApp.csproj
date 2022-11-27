@@ -110,11 +110,35 @@
     <Compile Include="Pages\CustomerViewMenu.Designer.cs">
       <DependentUpon>CustomerViewMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\OrderListView.cs">
+    <Compile Include="Pages\Cutting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\OrderListView.Designer.cs">
-      <DependentUpon>OrderListView.cs</DependentUpon>
+    <Compile Include="Pages\Cutting.Designer.cs">
+      <DependentUpon>Cutting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Manager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Orders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrdersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\OrdersList.Designer.cs">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductConstructor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ProductConstructor.Designer.cs">
+      <DependentUpon>ProductConstructor.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductList.cs">
       <SubType>UserControl</SubType>
@@ -162,8 +186,20 @@
     <EmbeddedResource Include="Pages\CustomerViewMenu.resx">
       <DependentUpon>CustomerViewMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\OrderListView.resx">
-      <DependentUpon>OrderListView.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Cutting.resx">
+      <DependentUpon>Cutting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OrdersList.resx">
+      <DependentUpon>OrdersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProductConstructor.resx">
+      <DependentUpon>ProductConstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
