@@ -13,12 +13,9 @@ namespace SewingApp.Pages
 {
     public partial class Auth : UserControl
     {
-        private Panel panel;
-        public Auth(Panel panel)
+        public Auth()
         {
             InitializeComponent();
-
-            this.panel = panel;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,9 +31,9 @@ namespace SewingApp.Pages
                 switch (user.IdRole)
                 {
                     case 1:
-                        this.panel.Controls.Clear();
-                        this.panel.Controls.Add(new CustomerViewMenu());
-                        break;/*
+                        MainForm.Instance.PrimaryControl = new Pages.CustomerViewMenu();
+                        break;
+                 /*
                     case 2:
                         NavigationService.Navigate(new PgManager());
                         break;

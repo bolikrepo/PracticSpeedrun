@@ -15,6 +15,7 @@ namespace SewingApp
             control.Controls.Clear();
             value.Dock = DockStyle.Fill;
             control.Controls.Add(value);
+            value.Parent = control;
         }
     }
 }
