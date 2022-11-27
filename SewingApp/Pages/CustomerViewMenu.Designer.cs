@@ -28,29 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sewingDBDataSet = new SewingApp.SewingDBDataSet();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.OrderTableAdapter();
-            this.orderStateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderStateTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.OrderStateTableAdapter();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.idManagerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ChangeButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderStateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -79,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(314, 127);
+            this.label2.Location = new System.Drawing.Point(325, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 31);
             this.label2.TabIndex = 17;
@@ -98,117 +83,30 @@
             this.idUserDataGridViewTextBoxColumn.HeaderText = "IdUser";
             this.idUserDataGridViewTextBoxColumn.Name = "idUserDataGridViewTextBoxColumn";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.dateDataGridViewTextBoxColumn,
-            this.idStateDataGridViewTextBoxColumn,
-            this.idManagerDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.PaymentButton,
-            this.ChangeButton});
-            this.dataGridView1.DataSource = this.orderBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(750, 224);
-            this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
-            // 
             // sewingDBDataSet
             // 
             this.sewingDBDataSet.DataSetName = "SewingDBDataSet";
             this.sewingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // orderBindingSource
+            // panel1
             // 
-            this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.sewingDBDataSet;
-            // 
-            // orderTableAdapter
-            // 
-            this.orderTableAdapter.ClearBeforeFill = true;
-            // 
-            // orderStateBindingSource
-            // 
-            this.orderStateBindingSource.DataMember = "OrderState";
-            this.orderStateBindingSource.DataSource = this.sewingDBDataSet;
-            // 
-            // orderStateTableAdapter
-            // 
-            this.orderStateTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Номер заказа";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // idStateDataGridViewTextBoxColumn
-            // 
-            this.idStateDataGridViewTextBoxColumn.DataPropertyName = "IdState";
-            this.idStateDataGridViewTextBoxColumn.DataSource = this.orderStateBindingSource;
-            this.idStateDataGridViewTextBoxColumn.DisplayMember = "Name";
-            this.idStateDataGridViewTextBoxColumn.HeaderText = "Состояние";
-            this.idStateDataGridViewTextBoxColumn.Name = "idStateDataGridViewTextBoxColumn";
-            this.idStateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idStateDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idStateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idStateDataGridViewTextBoxColumn.ValueMember = "Id";
-            // 
-            // idManagerDataGridViewTextBoxColumn
-            // 
-            this.idManagerDataGridViewTextBoxColumn.DataPropertyName = "IdManager";
-            this.idManagerDataGridViewTextBoxColumn.HeaderText = "Менеджер";
-            this.idManagerDataGridViewTextBoxColumn.Name = "idManagerDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Стоимость";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // PaymentButton
-            // 
-            this.PaymentButton.HeaderText = "Оплата";
-            this.PaymentButton.Name = "PaymentButton";
-            this.PaymentButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PaymentButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.PaymentButton.UseColumnTextForButtonValue = true;
-            // 
-            // ChangeButton
-            // 
-            this.ChangeButton.HeaderText = "Изменить";
-            this.ChangeButton.Name = "ChangeButton";
-            this.ChangeButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChangeButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ChangeButton.UseColumnTextForButtonValue = true;
+            this.panel1.Location = new System.Drawing.Point(15, 183);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(772, 264);
+            this.panel1.TabIndex = 18;
             // 
             // CustomerViewMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "CustomerViewMenu";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.CustomerViewMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderStateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,18 +119,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUserDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource orderStateBindingSource;
         private SewingDBDataSet sewingDBDataSet;
-        private System.Windows.Forms.BindingSource orderBindingSource;
-        private SewingDBDataSetTableAdapters.OrderTableAdapter orderTableAdapter;
-        private SewingDBDataSetTableAdapters.OrderStateTableAdapter orderStateTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn idStateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idManagerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn PaymentButton;
-        private System.Windows.Forms.DataGridViewButtonColumn ChangeButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

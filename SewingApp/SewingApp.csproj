@@ -110,6 +110,12 @@
     <Compile Include="Pages\CustomerViewMenu.Designer.cs">
       <DependentUpon>CustomerViewMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderListView.Designer.cs">
+      <DependentUpon>OrderListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProductList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CustomerViewMenu.resx">
       <DependentUpon>CustomerViewMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OrderListView.resx">
+      <DependentUpon>OrderListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
