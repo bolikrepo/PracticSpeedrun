@@ -116,7 +116,7 @@
             <Rectangle Grid.Row="11" Grid.ColumnSpan="4" Height="2" Margin="2" VerticalAlignment="Stretch"  Stroke="{StaticResource bMain2}"/>
 
             <Label Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="1" Content="Количество"/>
-            <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" Name="TbProductAmount" Text="1"/>
+            <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" Name="TbProductAmount" Text="1" TextChanged="TbProductAmount_TextChanged"/>
 
             <Grid Grid.Row="13" Grid.ColumnSpan="4">
                 <Grid.ColumnDefinitions>

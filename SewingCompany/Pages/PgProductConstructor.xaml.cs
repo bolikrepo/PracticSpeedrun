@@ -180,5 +180,10 @@ namespace SewingCompany.Pages
         {
             NavigationService.GetNavigationService(this).GoBack();
         }
+
+        private void TbProductAmount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

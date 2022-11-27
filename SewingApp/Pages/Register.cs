@@ -54,12 +54,12 @@ namespace SewingApp.Pages
                 return;
             }
 
-            User user = new User { 
+            Globals.DB.User.Add(new User
+            {
                 Login = login,
                 Password = passwd,
                 IdRole = 1
-            };
-            Globals.DB.User.Add(user);
+            });
             Globals.DB.SaveChanges();
 
             MessageBox.Show(

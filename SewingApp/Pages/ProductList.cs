@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -8,6 +9,8 @@ namespace SewingApp.Pages
         public ProductList()
         {
             InitializeComponent();
+
+            Globals.DB.Product.Load();
         }
 
         private void ProductList_Load(object sender, System.EventArgs e)

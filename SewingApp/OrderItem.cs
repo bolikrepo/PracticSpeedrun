@@ -11,7 +11,8 @@ namespace SewingApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class OrderItem
     {
         public int Id { get; set; }
