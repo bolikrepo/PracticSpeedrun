@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace SewingApp.Pages
 {
@@ -9,11 +10,15 @@ namespace SewingApp.Pages
         public OrdersList()
         {
             InitializeComponent();
+
+            Globals.DB.OrderState.Load();
+            Globals.DB.Order.Load();
         }
 
         private void OrdersList_Load(object sender, EventArgs e)
         {
-            dgOrders.DataSource = Globals.DB.OrderItem.Local.ToList();
+            orderStateBindingSource.DataSource = Globals.DB.OrderState.Local.ToList();
+            orderBindingSource.DataSource = Globals.DB.Order.Local.ToList();
         }
     }
 }
