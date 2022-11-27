@@ -3,13 +3,13 @@ using System.Windows.Forms;
 
 namespace SewingApp.Pages
 {
-    public partial class CustomerViewMenu : UserControl
+    public partial class MenuCustomer : UserControl
     {
-        public CustomerViewMenu()
+        public MenuCustomer()
         {
             InitializeComponent();
 
-            panel1.SetPrimaryControl(new OrdersList());
+            tabPage1.SetPrimaryControl(new OrdersList());
         }
 
         private void CustomerViewMenu_Load(object sender, EventArgs e)

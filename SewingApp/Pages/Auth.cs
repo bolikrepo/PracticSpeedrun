@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -27,7 +21,7 @@ namespace SewingApp.Pages
                 return;
             }
 
-            var user = Globals.DB.User.Where(u => u.Login == textBox1.Text && u.Password == textBox2.Text).FirstOrDefault();
+            var user = Globals.DB.User.Where(u => u.Login == login && u.Password == passwd).FirstOrDefault();
             
             if (user == null)
             {
@@ -41,7 +35,7 @@ namespace SewingApp.Pages
             switch (user.IdRole)
             {
                 case 1:
-                    MainForm.Instance.PrimaryControl = new Pages.CustomerViewMenu();
+                    Globals.NavigateTo(new Pages.MenuCustomer());
                     break;
                 /*
                 case 2:

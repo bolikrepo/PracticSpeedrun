@@ -104,11 +104,11 @@
     <Compile Include="Pages\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CustomerViewMenu.cs">
+    <Compile Include="Pages\MenuCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\CustomerViewMenu.Designer.cs">
-      <DependentUpon>CustomerViewMenu.cs</DependentUpon>
+    <Compile Include="Pages\MenuCustomer.Designer.cs">
+      <DependentUpon>MenuCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Cutting.cs">
       <SubType>UserControl</SubType>
@@ -116,11 +116,17 @@
     <Compile Include="Pages\Cutting.Designer.cs">
       <DependentUpon>Cutting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Manager.cs">
+    <Compile Include="Pages\MenuManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Manager.Designer.cs">
-      <DependentUpon>Manager.cs</DependentUpon>
+    <Compile Include="Pages\MenuManager.Designer.cs">
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MenuDirector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\MenuDirector.Designer.cs">
+      <DependentUpon>MenuDirector.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Orders.cs">
       <SubType>UserControl</SubType>
@@ -189,14 +195,17 @@
     <EmbeddedResource Include="Pages\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\CustomerViewMenu.resx">
-      <DependentUpon>CustomerViewMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MenuCustomer.resx">
+      <DependentUpon>MenuCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Cutting.resx">
       <DependentUpon>Cutting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Manager.resx">
-      <DependentUpon>Manager.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MenuManager.resx">
+      <DependentUpon>MenuManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MenuDirector.resx">
+      <DependentUpon>MenuDirector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
@@ -268,6 +277,18 @@
       <DependentUpon>Database.edmx</DependentUpon>
       <LastGenOutput>Database.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Images\System\no-image.jpg" />
+    <Resource Include="Resources\Images\System\arrow-clockwise.png" />
+    <Resource Include="Resources\Images\System\arrow-clock.png" />
+    <Resource Include="Resources\Images\Logo\logo-04.jpg" />
+    <Resource Include="Resources\Images\Logo\logo-03.jpg" />
+    <Resource Include="Resources\Images\Logo\logo-02.jpg" />
+    <Resource Include="Resources\Images\Logo\logo-01.jpg" />
+    <Resource Include="Resources\Images\Git\4.png" />
+    <Resource Include="Resources\Images\Git\3.png" />
+    <Resource Include="Resources\Images\Git\2.png" />
+    <Resource Include="Resources\Images\Git\1.png" />
+    <Resource Include="Resources\Images\Git\0.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,7 +1,7 @@
 ﻿
 namespace SewingApp.Pages
 {
-    partial class Manager
+    partial class MenuManager
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,6 +40,7 @@ namespace SewingApp.Pages
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -48,30 +49,30 @@ namespace SewingApp.Pages
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 424);
+            this.tabPage1.Size = new System.Drawing.Size(792, 417);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Заказы";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 424);
+            this.tabPage2.Size = new System.Drawing.Size(792, 369);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Список издений";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Manager
+            // MenuManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Name = "Manager";
+            this.Name = "MenuManager";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.Manager_Load);
             this.tabControl1.ResumeLayout(false);

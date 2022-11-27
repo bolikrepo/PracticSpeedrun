@@ -31,6 +31,17 @@ namespace SewingApp.Pages
         {
             this.dgProductList = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.picProduct = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.picBorder = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.picFabric = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.picFurniture = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.inpAmount = new System.Windows.Forms.NumericUpDown();
@@ -54,29 +65,11 @@ namespace SewingApp.Pages
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbProduct = new System.Windows.Forms.ComboBox();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.picProduct = new System.Windows.Forms.PictureBox();
-            this.picFabric = new System.Windows.Forms.PictureBox();
-            this.picBorder = new System.Windows.Forms.PictureBox();
-            this.picFurniture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inpAmount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inpWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -85,14 +78,21 @@ namespace SewingApp.Pages
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFabric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFurniture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inpAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inpWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inpHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // dgProductList
@@ -141,10 +141,143 @@ namespace SewingApp.Pages
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 1;
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
+            this.splitContainer3.Size = new System.Drawing.Size(450, 450);
+            this.splitContainer3.SplitterDistance = 218;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.picProduct);
+            this.splitContainer4.Panel1.Controls.Add(this.label8);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.picBorder);
+            this.splitContainer4.Panel2.Controls.Add(this.label10);
+            this.splitContainer4.Size = new System.Drawing.Size(218, 450);
+            this.splitContainer4.SplitterDistance = 206;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // picProduct
+            // 
+            this.picProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picProduct.Location = new System.Drawing.Point(0, 23);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(218, 183);
+            this.picProduct.TabIndex = 1;
+            this.picProduct.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 23);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Изделия";
+            // 
+            // picBorder
+            // 
+            this.picBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBorder.Location = new System.Drawing.Point(0, 23);
+            this.picBorder.Name = "picBorder";
+            this.picBorder.Size = new System.Drawing.Size(218, 217);
+            this.picBorder.TabIndex = 1;
+            this.picBorder.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 23);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Окантовка";
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.picFabric);
+            this.splitContainer5.Panel1.Controls.Add(this.label9);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.picFurniture);
+            this.splitContainer5.Panel2.Controls.Add(this.label11);
+            this.splitContainer5.Size = new System.Drawing.Size(228, 450);
+            this.splitContainer5.SplitterDistance = 208;
+            this.splitContainer5.TabIndex = 0;
+            // 
+            // picFabric
+            // 
+            this.picFabric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFabric.Location = new System.Drawing.Point(0, 23);
+            this.picFabric.Name = "picFabric";
+            this.picFabric.Size = new System.Drawing.Size(228, 185);
+            this.picFabric.TabIndex = 1;
+            this.picFabric.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Ткань";
+            // 
+            // picFurniture
+            // 
+            this.picFurniture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFurniture.Location = new System.Drawing.Point(0, 23);
+            this.picFurniture.Name = "picFurniture";
+            this.picFurniture.Size = new System.Drawing.Size(228, 215);
+            this.picFurniture.TabIndex = 2;
+            this.picFurniture.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 23);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Фурнитура";
+            // 
             // btnOrder
             // 
             this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(190, 401);
+            this.btnOrder.Location = new System.Drawing.Point(187, 401);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(136, 41);
             this.btnOrder.TabIndex = 16;
@@ -384,139 +517,6 @@ namespace SewingApp.Pages
             this.cbProduct.TabIndex = 0;
             this.cbProduct.SelectedIndexChanged += new System.EventHandler(this.cbProduct_SelectedIndexChanged);
             // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(450, 450);
-            this.splitContainer3.SplitterDistance = 218;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.picProduct);
-            this.splitContainer4.Panel1.Controls.Add(this.label8);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.picBorder);
-            this.splitContainer4.Panel2.Controls.Add(this.label10);
-            this.splitContainer4.Size = new System.Drawing.Size(218, 450);
-            this.splitContainer4.SplitterDistance = 206;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.picFabric);
-            this.splitContainer5.Panel1.Controls.Add(this.label9);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.picFurniture);
-            this.splitContainer5.Panel2.Controls.Add(this.label11);
-            this.splitContainer5.Size = new System.Drawing.Size(228, 450);
-            this.splitContainer5.SplitterDistance = 208;
-            this.splitContainer5.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 23);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Изделия";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 23);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Ткань";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Окантовка";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 23);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Фурнитура";
-            // 
-            // picProduct
-            // 
-            this.picProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picProduct.Location = new System.Drawing.Point(0, 23);
-            this.picProduct.Name = "picProduct";
-            this.picProduct.Size = new System.Drawing.Size(218, 183);
-            this.picProduct.TabIndex = 1;
-            this.picProduct.TabStop = false;
-            // 
-            // picFabric
-            // 
-            this.picFabric.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFabric.Location = new System.Drawing.Point(0, 23);
-            this.picFabric.Name = "picFabric";
-            this.picFabric.Size = new System.Drawing.Size(228, 185);
-            this.picFabric.TabIndex = 1;
-            this.picFabric.TabStop = false;
-            // 
-            // picBorder
-            // 
-            this.picBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBorder.Location = new System.Drawing.Point(0, 23);
-            this.picBorder.Name = "picBorder";
-            this.picBorder.Size = new System.Drawing.Size(218, 217);
-            this.picBorder.TabIndex = 1;
-            this.picBorder.TabStop = false;
-            // 
-            // picFurniture
-            // 
-            this.picFurniture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFurniture.Location = new System.Drawing.Point(0, 23);
-            this.picFurniture.Name = "picFurniture";
-            this.picFurniture.Size = new System.Drawing.Size(228, 215);
-            this.picFurniture.TabIndex = 2;
-            this.picFurniture.TabStop = false;
-            // 
             // ProductConstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -534,13 +534,6 @@ namespace SewingApp.Pages
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inpAmount)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inpWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inpHeight)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
@@ -551,16 +544,23 @@ namespace SewingApp.Pages
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBorder)).EndInit();
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             this.splitContainer5.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFabric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFurniture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inpAmount)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inpWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inpHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
