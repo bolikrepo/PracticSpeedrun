@@ -20,5 +20,28 @@ namespace SewingApp.Pages
             orderStateBindingSource.DataSource = Globals.DB.OrderState.Local.ToList();
             orderBindingSource.DataSource = Globals.DB.Order.Local.ToList();
         }
+
+        private void dgOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == dgOrders.Columns["PayButton"].Index)
+            {
+                if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    DialogResult dr = MessageBox.Show("Вы точно хотите оплатить заказ?",
+                      "Оплата заказа", MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.Yes)
+                    {
+
+                        int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
+                        Order order = Globals.DB.Order.Where(u => u.IdUser == 8 && u.Id == orderID).FirstOrDefault();
+                        order.IdState = 6;
+
+                        Globals.DB.SaveChanges();
+
+                        dgOrders.DataSource = Globals.DB.Order.Where(u => u.IdUser == 8).ToList();
+                    }
+                }
+            }
+        }
     }
 }
