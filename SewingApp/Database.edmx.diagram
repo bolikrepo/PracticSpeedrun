@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="172ebde6a44e4dd1b78fb401ae66b4d8" Name="Diagram1">
+        <EntityTypeShape EntityType="SewingDBModel.Fabric" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.FabricStock" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.Furniture" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.FurnitureStock" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.Order" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.OrderItem" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.OrderState" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.Product" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.Role" Width="1.5" PointX="1.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.ScrapRule" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.Unit" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.UnitConvert" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SewingDBModel.User" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderList_Fabric" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_ScrapRule_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_Stock_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_FabricStock_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_FabricStock_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_FurnitureStock_Furniture" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderList_Furniture" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_FurnitureStock_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_FurnitureStock_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_Order_OrderState" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderList_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderItem_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderItem_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_OrderList_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_Product_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_Product_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_UnitConvert_Unit1" ManuallyRouted="false" />
+        <AssociationConnector Association="SewingDBModel.FK_UnitConvert_Unit2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

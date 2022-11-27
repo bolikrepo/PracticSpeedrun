@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SewingApp
+namespace SewingApp.Pages
 {
-    public partial class Form1 : Form
+    public partial class ProductList : UserControl
     {
-        public Form1()
+        public ProductList()
         {
             InitializeComponent();
         }
