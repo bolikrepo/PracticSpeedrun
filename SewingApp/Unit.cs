@@ -9,9 +9,9 @@
 
 namespace SewingApp
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Unit
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,27 +30,28 @@ namespace SewingApp
         }
     
         public int Id { get; set; }
+        [DisplayName("Значение")]
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FabricStock> FabricStock { get; set; }
+        [Browsable(false)] public virtual ICollection<FabricStock> FabricStock { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FabricStock> FabricStock1 { get; set; }
+        [Browsable(false)] public virtual ICollection<FabricStock> FabricStock1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FurnitureStock> FurnitureStock { get; set; }
+        [Browsable(false)] public virtual ICollection<FurnitureStock> FurnitureStock { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FurnitureStock> FurnitureStock1 { get; set; }
+        [Browsable(false)] public virtual ICollection<FurnitureStock> FurnitureStock1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderItem> OrderItem { get; set; }
+        [Browsable(false)] public virtual ICollection<OrderItem> OrderItem { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderItem> OrderItem1 { get; set; }
+        [Browsable(false)] public virtual ICollection<OrderItem> OrderItem1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
+        [Browsable(false)] public virtual ICollection<Product> Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product1 { get; set; }
+        [Browsable(false)] public virtual ICollection<Product> Product1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UnitConvert> UnitConvert { get; set; }
+        [Browsable(false)] public virtual ICollection<UnitConvert> UnitConvert { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UnitConvert> UnitConvert1 { get; set; }
+        [Browsable(false)] public virtual ICollection<UnitConvert> UnitConvert1 { get; set; }
     }
 }

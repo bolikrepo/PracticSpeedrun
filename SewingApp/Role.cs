@@ -9,9 +9,9 @@
 
 namespace SewingApp
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +21,10 @@ namespace SewingApp
         }
     
         public int Id { get; set; }
+        [DisplayName("Название")]
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
+        [Browsable(false)] public virtual ICollection<User> User { get; set; }
     }
 }

@@ -25,15 +25,23 @@ namespace SewingApp
 
         [DisplayName("Номер")]
         public string Id { get; set; }
+        [DisplayName("Название")]
         public string Name { get; set; }
+        [DisplayName("Цвет")]
         public string Color { get; set; }
+        [DisplayName("Рисунок")]
         public string Pattern { get; set; }
+        [DisplayName("Состав")]
         public string Composition { get; set; }
-    
+        public override string ToString() => Name;
+
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItem { get; set; }
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ScrapRule> ScrapRule { get; set; }
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FabricStock> FabricStock { get; set; }
     }

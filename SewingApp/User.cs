@@ -11,7 +11,10 @@ namespace SewingApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
+    [DefaultProperty("Id")]
+    [DefaultBindingProperty("Login")]
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,13 +23,18 @@ namespace SewingApp
             this.Order = new HashSet<Order>();
         }
     
+        //[DisplayName("Номер")]
         public int Id { get; set; }
+        //[DisplayName("Логин")]
         public string Login { get; set; }
+        [DisplayName("Пароль")]
         public string Password { get; set; }
+        [DisplayName("Роль")]
         public int IdRole { get; set; }
-    
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
-        public virtual Role Role { get; set; }
+        [Browsable(false)] public virtual ICollection<Order> Order { get; set; }
+        [Browsable(false)] public virtual Role Role { get; set; }
     }
 }

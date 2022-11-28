@@ -164,11 +164,11 @@
     <Compile Include="Pages\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Stockman.cs">
+    <Compile Include="Pages\MenuStockman.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\Stockman.Designer.cs">
-      <DependentUpon>Stockman.cs</DependentUpon>
+    <Compile Include="Pages\MenuStockman.Designer.cs">
+      <DependentUpon>MenuStockman.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="Pages\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Stockman.resx">
-      <DependentUpon>Stockman.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MenuStockman.resx">
+      <DependentUpon>MenuStockman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

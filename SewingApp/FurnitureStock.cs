@@ -10,20 +10,30 @@
 namespace SewingApp
 {
     using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class FurnitureStock
     {
+        [DisplayName("Номер")]
         public int Id { get; set; }
+        [DisplayName("Артикул")]
         public string IdFurniture { get; set; }
+        [DisplayName("Ширина")]
         public Nullable<double> Width { get; set; }
+        [DisplayName("Единицы")]
         public Nullable<int> IdUnitWidth { get; set; }
+        [DisplayName("Высота")]
         public Nullable<double> Height { get; set; }
+        [DisplayName("Единицы")]
         public Nullable<int> IdUnitHeight { get; set; }
+        [DisplayName("Закупочная цена")]
         public Nullable<double> PurchasePrice { get; set; }
-    
+
+        [Browsable(false)]
         public virtual Furniture Furniture { get; set; }
+        [Browsable(false)]
         public virtual Unit Unit { get; set; }
+        [Browsable(false)]
         public virtual Unit Unit1 { get; set; }
     }
 }

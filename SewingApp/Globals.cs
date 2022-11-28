@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SewingApp
@@ -30,6 +32,23 @@ namespace SewingApp
             value.Dock = DockStyle.Fill;
             control.Controls.Add(value);
             value.Parent = control;
+        }
+
+        public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)
+            where T : class
+        {
+            data.Load();
+            var col = dataGrid.Columns[index];
+            dataGrid.Columns.RemoveAt(index);
+
+            dataGrid.Columns.Insert(1, new DataGridViewComboBoxColumn
+            {
+                Name = col.Name,
+                HeaderText = col.HeaderText,
+                ValueMember = typeof(T).GetCustomAttributes(true).OfType<DefaultPropertyAttribute>().FirstOrDefault()?.Name,
+                DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name,
+                DataSource = data.Local.ToList()
+            });
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -30,6 +31,7 @@ namespace SewingApp.Pages
                     break;
             }
 
+            dgOrders.EnsureComboBox(1, Globals.DB.User);
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)

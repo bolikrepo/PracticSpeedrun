@@ -9,17 +9,20 @@
 
 namespace SewingApp
 {
-    using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class UnitConvert
     {
+        [DisplayName("Номер")]
         public int Id { get; set; }
+        [DisplayName("Из")]
         public int IdUnit1 { get; set; }
+        [DisplayName("В")]
         public int IdUnit2 { get; set; }
+        [DisplayName("Разница")]
         public double Ratio { get; set; }
     
-        public virtual Unit Unit { get; set; }
-        public virtual Unit Unit1 { get; set; }
+        [Browsable(false)] public virtual Unit Unit { get; set; }
+        [Browsable(false)] public virtual Unit Unit1 { get; set; }
     }
 }

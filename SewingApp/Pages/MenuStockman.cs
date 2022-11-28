@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace SewingApp.Pages
 {
-    public partial class Stockman : UserControl
+    public partial class MenuStockman : UserControl
     {
-        public Stockman()
+        public MenuStockman()
         {
             InitializeComponent();
         }

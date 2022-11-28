@@ -11,14 +11,18 @@ namespace SewingApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class ScrapRule
     {
         public int Id { get; set; }
+        [DisplayName("Материал")]
         public string IdMaterial { get; set; }
+        [DisplayName("Единицы")]
         public int IdUnit { get; set; }
+        [DisplayName("Значение")]
         public int Value { get; set; }
-    
-        public virtual Fabric Fabric { get; set; }
+
+        [Browsable(false)] public virtual Fabric Fabric { get; set; }
     }
 }
