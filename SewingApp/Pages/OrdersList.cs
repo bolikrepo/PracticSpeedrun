@@ -47,8 +47,8 @@ namespace SewingApp.Pages
             {
                 if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
                 {
-                    //int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
-                    MainForm.Instance.PrimaryControl = new Pages.OrderEditMenu(20);
+                    int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
+                    MainForm.Instance.PrimaryControl = new Pages.OrderEditMenu(orderID);
                 }
             }
         }

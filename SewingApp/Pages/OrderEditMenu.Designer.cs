@@ -110,6 +110,7 @@
             this.btnCreateOrder.TabIndex = 2;
             this.btnCreateOrder.Text = "Назад";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 
             // productBindingSource
             // 
