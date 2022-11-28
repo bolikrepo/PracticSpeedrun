@@ -53,5 +53,10 @@ namespace SewingApp.Pages
         {
             MainForm.Instance.PrimaryControl = new Pages.Register();
         }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

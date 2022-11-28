@@ -42,6 +42,20 @@ namespace SewingApp.Pages
                     }
                 }
             }
+
+            if (e.ColumnIndex == dgOrders.Columns["EditButton"].Index)
+            {
+                if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    //int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
+                    MainForm.Instance.PrimaryControl = new Pages.OrderEditMenu(20);
+                }
+            }
+        }
+
+        private void DgOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
