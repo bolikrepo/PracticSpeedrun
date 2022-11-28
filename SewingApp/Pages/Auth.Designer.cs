@@ -122,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Auth";
             this.Size = new System.Drawing.Size(816, 477);
+            this.Load += new System.EventHandler(this.Auth_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

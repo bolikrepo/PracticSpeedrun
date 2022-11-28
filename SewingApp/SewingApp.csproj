@@ -128,6 +128,12 @@
     <Compile Include="Pages\MenuDirector.Designer.cs">
       <DependentUpon>MenuDirector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderEditMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderEditMenu.Designer.cs">
+      <DependentUpon>OrderEditMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Orders.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MenuDirector.resx">
       <DependentUpon>MenuDirector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\OrderEditMenu.resx">
+      <DependentUpon>OrderEditMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
