@@ -12,8 +12,8 @@ namespace SewingApp.Pages
 
         private void Stockman_Load(object sender, EventArgs e)
         {
-            dgFabric.DataSource = Globals.DB.Fabric.Local;
-            dgFurniture.DataSource = Globals.DB.Furniture.Local;
+            dgFabric.EnsureData(Globals.DB.Fabric);
+            dgFurniture.EnsureData(Globals.DB.Furniture);
         }
     }
 }

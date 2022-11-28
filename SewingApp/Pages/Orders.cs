@@ -32,6 +32,8 @@ namespace SewingApp.Pages
             }
 
             dgOrders.EnsureComboBox(1, Globals.DB.User);
+            dgOrders.EnsureComboBox(3, Globals.DB.OrderState);
+            dgOrders.EnsureComboBox(4, Globals.DB.User);
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)

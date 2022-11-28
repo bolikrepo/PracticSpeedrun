@@ -56,6 +56,7 @@ namespace SewingApp.Pages
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 450);
@@ -64,9 +65,10 @@ namespace SewingApp.Pages
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgFabric);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(792, 424);
+            this.tabPage3.Size = new System.Drawing.Size(792, 417);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Ткани";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -76,16 +78,18 @@ namespace SewingApp.Pages
             this.dgFabric.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFabric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgFabric.Location = new System.Drawing.Point(0, 0);
+            this.dgFabric.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgFabric.Name = "dgFabric";
-            this.dgFabric.Size = new System.Drawing.Size(792, 424);
+            this.dgFabric.Size = new System.Drawing.Size(792, 417);
             this.dgFabric.TabIndex = 0;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dgFurniture);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(792, 424);
+            this.tabPage4.Size = new System.Drawing.Size(1192, 666);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Фурнитура";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -95,16 +99,18 @@ namespace SewingApp.Pages
             this.dgFurniture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFurniture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgFurniture.Location = new System.Drawing.Point(0, 0);
+            this.dgFurniture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgFurniture.Name = "dgFurniture";
-            this.dgFurniture.Size = new System.Drawing.Size(792, 424);
+            this.dgFurniture.Size = new System.Drawing.Size(1192, 666);
             this.dgFurniture.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(792, 424);
+            this.tabPage1.Size = new System.Drawing.Size(1192, 666);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Обработка поставок";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -113,13 +119,15 @@ namespace SewingApp.Pages
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dgSupply);
-            this.splitContainer1.Size = new System.Drawing.Size(792, 424);
-            this.splitContainer1.SplitterDistance = 384;
+            this.splitContainer1.Size = new System.Drawing.Size(1192, 666);
+            this.splitContainer1.SplitterDistance = 577;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 2;
             // 
             // dgSupply
@@ -127,16 +135,20 @@ namespace SewingApp.Pages
             this.dgSupply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSupply.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSupply.Location = new System.Drawing.Point(0, 0);
+            this.dgSupply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgSupply.Name = "dgSupply";
-            this.dgSupply.Size = new System.Drawing.Size(384, 424);
+            this.dgSupply.Size = new System.Drawing.Size(577, 666);
             this.dgSupply.TabIndex = 0;
             // 
-            // Stockman
+            // MenuStockman
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.Controls.Add(this.tabControl1);
-            this.Name = "Stockman";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "MenuStockman";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.Stockman_Load);
             this.tabControl1.ResumeLayout(false);

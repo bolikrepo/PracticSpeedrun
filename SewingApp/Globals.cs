@@ -34,6 +34,13 @@ namespace SewingApp
             value.Parent = control;
         }
 
+        public static void EnsureData<T>(this DataGridView dataGrid, DbSet<T> data)
+            where T : class
+        {
+            data.Load();
+            dataGrid.DataSource = data.Local.ToList();
+        }
+
         public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)
             where T : class
         {
@@ -41,10 +48,11 @@ namespace SewingApp
             var col = dataGrid.Columns[index];
             dataGrid.Columns.RemoveAt(index);
 
-            dataGrid.Columns.Insert(1, new DataGridViewComboBoxColumn
+            dataGrid.Columns.Insert(index, new DataGridViewComboBoxColumn
             {
                 Name = col.Name,
                 HeaderText = col.HeaderText,
+                DataPropertyName = col.DataPropertyName,
                 ValueMember = typeof(T).GetCustomAttributes(true).OfType<DefaultPropertyAttribute>().FirstOrDefault()?.Name,
                 DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name,
                 DataSource = data.Local.ToList()
