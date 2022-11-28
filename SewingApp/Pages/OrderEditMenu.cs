@@ -44,5 +44,10 @@ namespace SewingApp.Pages
         {
 
         }
+
+        private void BtnCreateOrder_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.PrimaryControl = new Pages.OrdersList();
+        }
     }
 }
