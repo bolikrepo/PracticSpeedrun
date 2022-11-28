@@ -1,7 +1,7 @@
 ﻿
 namespace SewingApp.Pages
 {
-    partial class Stockman
+    partial class MenuStockman
     {
         /// <summary> 
         /// Required designer variable.

@@ -9,31 +9,43 @@
 
 namespace SewingApp
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
 
     public partial class OrderItem
     {
+        [DisplayName("Номер")]
         public int Id { get; set; }
+        [DisplayName("Заказ")]
         public int IdOrder { get; set; }
+        [DisplayName("Изделие")]
         public string IdProduct { get; set; }
+        [DisplayName("Ткань")]
         public string IdFabric { get; set; }
+        [DisplayName("Фурнитура")]
         public string IdFurniture { get; set; }
+        [DisplayName("Граница")]
         public string IdBorder { get; set; }
+        [DisplayName("Ширина")]
         public double Width { get; set; }
-        public double Height { get; set; }
+        [DisplayName("Единицы")]
         public int IdUnitWidth { get; set; }
+        [DisplayName("Высота")]
+        public double Height { get; set; }
+        [DisplayName("Единицы")]
         public int IdUnitHeight { get; set; }
+        [DisplayName("Цена")]
         public double Price { get; set; }
+        [DisplayName("Угол поворота")]
         public int RotationAngle { get; set; }
+        [DisplayName("Кол-во")]
         public int Amount { get; set; }
     
-        public virtual Fabric Fabric { get; set; }
-        public virtual Furniture Furniture { get; set; }
-        public virtual Order Order { get; set; }
-        public virtual Unit Unit { get; set; }
-        public virtual Unit Unit1 { get; set; }
-        public virtual Product Product { get; set; }
+
+        [Browsable(false)] public virtual Fabric Fabric { get; set; }
+        [Browsable(false)] public virtual Furniture Furniture { get; set; }
+        [Browsable(false)] public virtual Order Order { get; set; }
+        [Browsable(false)] public virtual Unit Unit { get; set; }
+        [Browsable(false)] public virtual Unit Unit1 { get; set; }
+        [Browsable(false)] public virtual Product Product { get; set; }
     }
 }

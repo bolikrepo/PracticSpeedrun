@@ -37,16 +37,15 @@ namespace SewingApp.Pages
                 case 1:
                     Globals.NavigateTo(new Pages.MenuCustomer());
                     break;
-                /*
                 case 2:
-                    NavigationService.Navigate(new PgManager());
+                    Globals.NavigateTo(new Pages.MenuManager());
                     break;
                 case 3:
-                    NavigationService.Navigate(new PgStockman());
+                    Globals.NavigateTo(new Pages.MenuStockman());
                     break;
                 case 4:
-                    NavigationService.Navigate(new PgDirector());
-                    break;*/
+                    Globals.NavigateTo(new Pages.MenuDirector());
+                    break;
             }
         }
 

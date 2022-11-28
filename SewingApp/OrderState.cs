@@ -9,9 +9,9 @@
 
 namespace SewingApp
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class OrderState
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +21,10 @@ namespace SewingApp
         }
     
         public int Id { get; set; }
+        [DisplayName("Название")]
         public string Name { get; set; }
-    
+
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
     }

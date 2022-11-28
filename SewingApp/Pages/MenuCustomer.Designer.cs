@@ -30,10 +30,8 @@
         {
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sewingDBDataSet = new SewingApp.SewingDBDataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,11 +47,6 @@
             this.idUserDataGridViewTextBoxColumn.DataPropertyName = "IdUser";
             this.idUserDataGridViewTextBoxColumn.HeaderText = "IdUser";
             this.idUserDataGridViewTextBoxColumn.Name = "idUserDataGridViewTextBoxColumn";
-            // 
-            // sewingDBDataSet
-            // 
-            this.sewingDBDataSet.DataSetName = "SewingDBDataSet";
-            this.sewingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControl1
             // 
@@ -84,7 +77,6 @@
             this.Name = "MenuCustomer";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.CustomerViewMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -93,7 +85,6 @@
         #endregion
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUserDataGridViewTextBoxColumn;
-        private SewingDBDataSet sewingDBDataSet;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
     }

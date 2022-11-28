@@ -11,7 +11,8 @@ namespace SewingApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Furniture
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,14 +21,20 @@ namespace SewingApp
             this.FurnitureStock = new HashSet<FurnitureStock>();
             this.OrderItem = new HashSet<OrderItem>();
         }
-    
+
+        [DisplayName("Номер")]
         public string Id { get; set; }
+        [DisplayName("Название")]
         public string Name { get; set; }
+        [DisplayName("Тип")]
         public string Type { get; set; }
+        [DisplayName("Закупочная цена")]
         public Nullable<double> PurchasePrice { get; set; }
-    
+
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FurnitureStock> FurnitureStock { get; set; }
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItem> OrderItem { get; set; }
     }
