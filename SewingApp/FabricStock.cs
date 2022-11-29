@@ -15,7 +15,7 @@ namespace SewingApp
     public partial class FabricStock
     {
         [DisplayName("Номер")]
-        public int Id { get; set; }
+        [Browsable(false)]  public int Id { get; set; }
         [DisplayName("Артикул")]
         public string IdFabric { get; set; }
         [DisplayName("Ширина")]

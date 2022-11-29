@@ -38,6 +38,10 @@ namespace SewingApp.Pages
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgSupply = new System.Windows.Forms.DataGridView();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbSupplyDocs = new System.Windows.Forms.ListBox();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFabric)).BeginInit();
@@ -46,6 +50,7 @@ namespace SewingApp.Pages
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSupply)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +130,14 @@ namespace SewingApp.Pages
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnApply);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
             this.splitContainer1.Panel1.Controls.Add(this.dgSupply);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.lbSupplyDocs);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Size = new System.Drawing.Size(792, 417);
             this.splitContainer1.SplitterDistance = 383;
             this.splitContainer1.SplitterWidth = 6;
@@ -133,12 +145,14 @@ namespace SewingApp.Pages
             // 
             // dgSupply
             // 
+            this.dgSupply.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgSupply.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSupply.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgSupply.Location = new System.Drawing.Point(0, 0);
+            this.dgSupply.Location = new System.Drawing.Point(0, 34);
             this.dgSupply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgSupply.Name = "dgSupply";
-            this.dgSupply.Size = new System.Drawing.Size(383, 417);
+            this.dgSupply.Size = new System.Drawing.Size(383, 350);
             this.dgSupply.TabIndex = 0;
             // 
             // btnExit
@@ -152,6 +166,49 @@ namespace SewingApp.Pages
             this.btnExit.Text = "Выход";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(403, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Документы принятые на учет";
+            // 
+            // lbSupplyDocs
+            // 
+            this.lbSupplyDocs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSupplyDocs.FormattingEnabled = true;
+            this.lbSupplyDocs.ItemHeight = 20;
+            this.lbSupplyDocs.Location = new System.Drawing.Point(1, 25);
+            this.lbSupplyDocs.Name = "lbSupplyDocs";
+            this.lbSupplyDocs.Size = new System.Drawing.Size(402, 384);
+            this.lbSupplyDocs.TabIndex = 1;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpload.Location = new System.Drawing.Point(3, 0);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(153, 26);
+            this.btnUpload.TabIndex = 1;
+            this.btnUpload.Text = "Загрузить файл";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.Enabled = false;
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnApply.Location = new System.Drawing.Point(13, 392);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(183, 22);
+            this.btnApply.TabIndex = 2;
+            this.btnApply.Text = "Принять на учет";
+            this.btnApply.UseVisualStyleBackColor = true;
             // 
             // MenuStockman
             // 
@@ -172,6 +229,7 @@ namespace SewingApp.Pages
             ((System.ComponentModel.ISupportInitialize)(this.dgFurniture)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSupply)).EndInit();
@@ -190,5 +248,9 @@ namespace SewingApp.Pages
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgSupply;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbSupplyDocs;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnApply;
     }
 }
