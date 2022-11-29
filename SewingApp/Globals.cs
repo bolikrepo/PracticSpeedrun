@@ -14,6 +14,25 @@ namespace SewingApp
             MainForm.Instance.PrimaryControl = value;
         }
 
+        public static void NavigateToRoleMenu()
+        {
+            switch (Context.CurrentUser.IdRole)
+            {
+                case 1:
+                    NavigateTo(new Pages.MenuCustomer());
+                    break;
+                case 2:
+                    NavigateTo(new Pages.MenuManager());
+                    break;
+                case 3:
+                    NavigateTo(new Pages.MenuStockman());
+                    break;
+                case 4:
+                    NavigateTo(new Pages.MenuDirector());
+                    break;
+            }
+        }
+
         public static class Context
         {
             public static User CurrentUser { get; set; }
@@ -34,11 +53,15 @@ namespace SewingApp
             value.Parent = control;
         }
 
-        public static void EnsureData<T>(this DataGridView dataGrid, DbSet<T> data)
+        public static void EnsureData<T>(this DataGridView dataGrid, IQueryable<T> data)
             where T : class
         {
             data.Load();
-            dataGrid.DataSource = data.Local.ToList();
+            dataGrid.DataSource = data.ToList();
+
+            dataGrid.AllowUserToAddRows = false;
+            dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.ReadOnly = true;
         }
 
         public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)

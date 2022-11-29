@@ -42,7 +42,6 @@ namespace SewingApp.Pages
             this.PayButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnCreateProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.orderTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.OrderTableAdapter();
@@ -153,17 +152,6 @@ namespace SewingApp.Pages
             this.orderBindingSource.DataMember = "Order";
             this.orderBindingSource.DataSource = this.sewingDBDataSet;
             // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBack.Location = new System.Drawing.Point(650, 4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(147, 28);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Назад";
-            this.btnBack.UseVisualStyleBackColor = true;
-            // 
             // btnCreateProduct
             // 
             this.btnCreateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -198,7 +186,6 @@ namespace SewingApp.Pages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreateProduct);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.dgOrders);
             this.Name = "OrdersList";
@@ -217,7 +204,6 @@ namespace SewingApp.Pages
 
         private System.Windows.Forms.Button btnCreateOrder;
         private System.Windows.Forms.DataGridView dgOrders;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnCreateProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource orderStateBindingSource;

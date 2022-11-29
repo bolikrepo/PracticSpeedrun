@@ -31,22 +31,7 @@ namespace SewingApp.Pages
 
 
             Globals.Context.CurrentUser = user;
-
-            switch (user.IdRole)
-            {
-                case 1:
-                    Globals.NavigateTo(new Pages.MenuCustomer());
-                    break;
-                case 2:
-                    Globals.NavigateTo(new Pages.MenuManager());
-                    break;
-                case 3:
-                    Globals.NavigateTo(new Pages.MenuStockman());
-                    break;
-                case 4:
-                    Globals.NavigateTo(new Pages.MenuDirector());
-                    break;
-            }
+            Globals.NavigateToRoleMenu();
         }
 
         private void button1_Click(object sender, EventArgs e)

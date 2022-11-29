@@ -20,14 +20,14 @@ namespace SewingApp.Pages
             {
 
                 case 1: // Заказчик
-                    dgOrders.DataSource = Globals.DB.Order.Where(u => u.IdUser == Globals.Context.CurrentUser.Id).ToList();
+                    dgOrders.EnsureData(Globals.DB.Order.Where(u => u.IdUser == Globals.Context.CurrentUser.Id));
                     break;
                 case 2:  // Менеджер
                     btnCreateOrder.Enabled = false;
-                    dgOrders.DataSource = Globals.DB.Order.Where(
-                        u => u.IdManager == null 
+                    dgOrders.EnsureData(Globals.DB.Order.Where(
+                        u => u.IdManager == null
                         || u.IdManager == Globals.Context.CurrentUser.Id
-                    ).ToList();
+                    ));
                     break;
             }
 
