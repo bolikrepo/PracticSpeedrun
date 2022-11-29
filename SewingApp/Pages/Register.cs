@@ -15,6 +15,11 @@ namespace SewingApp.Pages
             InitializeComponent();
         }
 
+        private void Register_Load(object sender, EventArgs e)
+        {
+            MainForm.Instance.Text = "Cheto Tam Company - Регистрация";
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             string login = textBox4.Text, 
@@ -75,5 +80,6 @@ namespace SewingApp.Pages
         {
             Globals.NavigateTo(new Pages.Auth());
         }
+
     }
 }

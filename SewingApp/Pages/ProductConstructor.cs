@@ -9,12 +9,12 @@ namespace SewingApp.Pages
 {
     public partial class ProductConstructor : UserControl
     {
-        public string ImagesPath = "../Resources";
+        public string ImagesPath = "./Resources/Images/";
 
         public static OpenFileDialog ImageFileDialog = new OpenFileDialog
         {
             Title = "Выберите изображение",
-            Filter = "Все поддерживаемые форматы|*.jpg;*.jpeg;*.png" +
+            Filter = "Изображение | *.jpg;*.jpeg;*.png" +
               "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg" +
               "Portable Network Graphic (*.png)|*.png"
         };
@@ -22,56 +22,74 @@ namespace SewingApp.Pages
         public ProductConstructor()
         {
             InitializeComponent();
-
-            Globals.DB.Product.Load();
-            Globals.DB.Unit.Load();
-            Globals.DB.Fabric.Load();
-            Globals.DB.Furniture.Load();
         }
 
         private void ProductConstructor_Load(object sender, EventArgs e)
         {
-            cbProduct.DataSource = Globals.DB.Product.ToList();
-            cbWidthUnit.DataSource = Globals.DB.Unit.ToList();
-            cbHeightUnit.DataSource = Globals.DB.Unit.ToList();
+            cbProduct.FillData(Globals.DB.Product);
+            cbWidthUnit.FillData(Globals.DB.Unit);
+            cbHeightUnit.FillData(Globals.DB.Unit);
 
-            cbFabric.DataSource = Globals.DB.Fabric.ToList();
-            cbFurniture.DataSource = Globals.DB.Furniture.ToList();
-            cbBorder.DataSource = Globals.DB.Fabric.ToList();
+            cbFabric.FillData(Globals.DB.Fabric);
+            cbFurniture.FillData(Globals.DB.Furniture);
+            cbBorder.FillData(Globals.DB.Fabric);
+
         }
 
         private void cbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            picProduct.Image = Image.FromFile(Path.Combine(ImagesPath, "/Images/System/no-image.jpg"));
-            //try
-            //{
-            //    //picProduct.Image = Image.FromFile(ImagesPath + @"Изделия/" + CbProduct.SelectedValue + ".jpg");
-            //}
-            //catch
-            //{
-            //}
+            try
+            {
+                picProduct.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Product/{(cbProduct.SelectedItem as Product)?.Id}.JPG"));
+            }
+            catch
+            {
+                picProduct.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+            }
         }
 
         private void cbFabric_SelectedIndexChanged(object sender, EventArgs e)
         {
-            picFabric.Image = Image.FromFile(Path.Combine(ImagesPath, "/Images/System/no-image.jpg"));
-        }
-
-        private void cbBorder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            picBorder.Image = Image.FromFile(Path.Combine(ImagesPath, "/Images/System/no-image.jpg"));
+            try
+            {
+                picFabric.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Fabric/{(cbFabric.SelectedItem as Fabric)?.Id}.jpg"));
+            }
+            catch
+            {
+                picFabric.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+            }
         }
 
         private void cbFurniture_SelectedIndexChanged(object sender, EventArgs e)
         {
-            picFurniture.Image = Image.FromFile(Path.Combine(ImagesPath, "/Images/System/no-image.jpg"));
+            try
+            {
+                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Furniture/{(cbFurniture.SelectedItem as Furniture)?.Id}.jpg"));
+            }
+            catch
+            {
+                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+            }
+        }
+
+        private void cbBorder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                picBorder.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Fabric/{(cbBorder.SelectedItem as Fabric)?.Id}.jpg"));
+            }
+            catch
+            {
+                picBorder.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+            }
         }
 
         private void btnFabricPath_Click(object sender, EventArgs e)
         {
             if (ImageFileDialog.ShowDialog() == DialogResult.OK)
             {
-                picFabric.Image = Image.FromFile(ImageFileDialog.FileName);
+                picFabric.BackgroundImage = Image.FromFile(ImageFileDialog.FileName);
                 inpFabricPath.Text = ImageFileDialog.FileName;
             }
         }
@@ -80,7 +98,7 @@ namespace SewingApp.Pages
         {
             if (ImageFileDialog.ShowDialog() == DialogResult.OK)
             {
-                picFurniture.Image = Image.FromFile(ImageFileDialog.FileName);
+                picFurniture.BackgroundImage = Image.FromFile(ImageFileDialog.FileName);
                 inpFurniturePath.Text = ImageFileDialog.FileName;
             }
         }
@@ -88,7 +106,7 @@ namespace SewingApp.Pages
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Globals.NavigateTo(new Pages.OrdersList());
+            Globals.NavigateToRoleMenu();
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -124,7 +142,7 @@ namespace SewingApp.Pages
             });
             Globals.DB.SaveChanges();
 
-            Globals.NavigateTo(new Pages.OrdersList());
+            Globals.NavigateToRoleMenu();
         }
     }
 }

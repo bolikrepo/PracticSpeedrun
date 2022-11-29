@@ -82,7 +82,6 @@ namespace SewingApp.Pages
             this.dgOrders.Name = "dgOrders";
             this.dgOrders.Size = new System.Drawing.Size(800, 409);
             this.dgOrders.TabIndex = 2;
-            this.dgOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgOrders_CellContentClick);
             this.dgOrders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgOrders_CellMouseClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -161,6 +160,7 @@ namespace SewingApp.Pages
             this.btnCreateProduct.TabIndex = 5;
             this.btnCreateProduct.Text = "Новое изделие";
             this.btnCreateProduct.UseVisualStyleBackColor = true;
+            this.btnCreateProduct.Click += new System.EventHandler(this.btnCreateProduct_Click);
             // 
             // label1
             // 
@@ -168,9 +168,9 @@ namespace SewingApp.Pages
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(338, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.Size = new System.Drawing.Size(168, 24);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Заказ:";
+            this.label1.Text = "Заказ: Не выбран";
             // 
             // orderTableAdapter
             // 

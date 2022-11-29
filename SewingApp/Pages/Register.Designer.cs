@@ -145,6 +145,7 @@ namespace SewingApp.Pages
             this.Controls.Add(this.label3);
             this.Name = "Register";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

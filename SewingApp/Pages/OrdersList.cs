@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace SewingApp.Pages
 {
@@ -42,8 +43,7 @@ namespace SewingApp.Pages
                     }
                 }
             }
-
-            if (e.ColumnIndex == dgOrders.Columns["EditButton"].Index)
+            else if (e.ColumnIndex == dgOrders.Columns["EditButton"].Index)
             {
                 if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
                 {
@@ -51,11 +51,29 @@ namespace SewingApp.Pages
                     MainForm.Instance.PrimaryControl = new Pages.OrderEditMenu(orderID);
                 }
             }
+            else
+            {
+                if (orderBindingSource.DataSource is List<Order> dl)
+                {
+                    var tar = dl[e.RowIndex];
+                    label1.Text = $"Заказ: {tar.Id}";
+                    Globals.Context.CurrentOrder = tar;
+                }
+            }
         }
 
-        private void DgOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCreateProduct_Click(object sender, EventArgs e)
         {
-
+            if (Globals.Context.CurrentOrder == null)
+            {
+                MessageBox.Show(
+                    "Не выбран заказ!", "Ошибка!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error
+                );
+                return;
+            }
+            Globals.NavigateTo(new Pages.ProductConstructor());
         }
+
     }
 }

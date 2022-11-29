@@ -13,6 +13,8 @@ namespace SewingApp
     using System.Collections.Generic;
     using System.ComponentModel;
 
+    [DefaultProperty("Id")]
+    [DefaultBindingProperty("Name")]
     public partial class Fabric
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

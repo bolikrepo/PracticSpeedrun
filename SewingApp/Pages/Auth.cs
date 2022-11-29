@@ -11,6 +11,10 @@ namespace SewingApp.Pages
         {
             InitializeComponent();
         }
+        private void Auth_Load(object sender, EventArgs e)
+        {
+            MainForm.Instance.Text = "Cheto Tam Company - Авторизация";
+        }
 
         private void ForceAuth()
         {
@@ -44,12 +48,6 @@ namespace SewingApp.Pages
             MainForm.Instance.PrimaryControl = new Pages.Register();
         }
 
-        private void Auth_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void Auth_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -57,5 +55,6 @@ namespace SewingApp.Pages
                 ForceAuth();
             }
         }
+
     }
 }

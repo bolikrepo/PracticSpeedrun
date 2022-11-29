@@ -19,15 +19,19 @@ namespace SewingApp
             switch (Context.CurrentUser.IdRole)
             {
                 case 1:
+                    MainForm.Instance.Text = "Cheto Tam Company - Заказчик";
                     NavigateTo(new Pages.MenuCustomer());
                     break;
                 case 2:
+                    MainForm.Instance.Text = "Cheto Tam Company - Менеджер";
                     NavigateTo(new Pages.MenuManager());
                     break;
                 case 3:
+                    MainForm.Instance.Text = "Cheto Tam Company - Кладовщик";
                     NavigateTo(new Pages.MenuStockman());
                     break;
                 case 4:
+                    MainForm.Instance.Text = "Cheto Tam Company - Директор";
                     NavigateTo(new Pages.MenuDirector());
                     break;
             }
@@ -80,6 +84,17 @@ namespace SewingApp
                 DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name,
                 DataSource = data.Local.ToList()
             });
+        }
+
+
+        public static void FillData<T>(this ComboBox comboBox, DbSet<T> data)
+            where T : class
+        {
+            data.Load();
+
+            comboBox.DataSource = data.ToList();
+            comboBox.ValueMember = typeof(T).GetCustomAttributes(true).OfType<DefaultPropertyAttribute>().FirstOrDefault()?.Name;
+            comboBox.DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name;
         }
 
     }

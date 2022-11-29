@@ -180,6 +180,7 @@ namespace SewingApp.Pages
             // 
             // picProduct
             // 
+            this.picProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picProduct.Location = new System.Drawing.Point(0, 23);
             this.picProduct.Name = "picProduct";
@@ -199,6 +200,7 @@ namespace SewingApp.Pages
             // 
             // picBorder
             // 
+            this.picBorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBorder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBorder.Location = new System.Drawing.Point(0, 23);
             this.picBorder.Name = "picBorder";
@@ -238,6 +240,7 @@ namespace SewingApp.Pages
             // 
             // picFabric
             // 
+            this.picFabric.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picFabric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picFabric.Location = new System.Drawing.Point(0, 23);
             this.picFabric.Name = "picFabric";
@@ -257,6 +260,7 @@ namespace SewingApp.Pages
             // 
             // picFurniture
             // 
+            this.picFurniture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picFurniture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picFurniture.Location = new System.Drawing.Point(0, 23);
             this.picFurniture.Name = "picFurniture";
@@ -277,7 +281,7 @@ namespace SewingApp.Pages
             // btnOrder
             // 
             this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(181, 401);
+            this.btnOrder.Location = new System.Drawing.Point(178, 401);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(136, 41);
             this.btnOrder.TabIndex = 16;
