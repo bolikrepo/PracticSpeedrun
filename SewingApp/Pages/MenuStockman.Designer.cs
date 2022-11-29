@@ -37,6 +37,7 @@ namespace SewingApp.Pages
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgSupply = new System.Windows.Forms.DataGridView();
+            this.btnExit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFabric)).BeginInit();
@@ -86,10 +87,10 @@ namespace SewingApp.Pages
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dgFurniture);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1192, 666);
+            this.tabPage4.Size = new System.Drawing.Size(792, 417);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Фурнитура";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -101,16 +102,16 @@ namespace SewingApp.Pages
             this.dgFurniture.Location = new System.Drawing.Point(0, 0);
             this.dgFurniture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgFurniture.Name = "dgFurniture";
-            this.dgFurniture.Size = new System.Drawing.Size(1192, 666);
+            this.dgFurniture.Size = new System.Drawing.Size(792, 417);
             this.dgFurniture.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1192, 666);
+            this.tabPage1.Size = new System.Drawing.Size(792, 417);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Обработка поставок";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -125,8 +126,8 @@ namespace SewingApp.Pages
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dgSupply);
-            this.splitContainer1.Size = new System.Drawing.Size(1192, 666);
-            this.splitContainer1.SplitterDistance = 577;
+            this.splitContainer1.Size = new System.Drawing.Size(792, 417);
+            this.splitContainer1.SplitterDistance = 383;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -137,14 +138,27 @@ namespace SewingApp.Pages
             this.dgSupply.Location = new System.Drawing.Point(0, 0);
             this.dgSupply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgSupply.Name = "dgSupply";
-            this.dgSupply.Size = new System.Drawing.Size(577, 666);
+            this.dgSupply.Size = new System.Drawing.Size(383, 417);
             this.dgSupply.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExit.Location = new System.Drawing.Point(630, 6);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(150, 25);
+            this.btnExit.TabIndex = 19;
+            this.btnExit.Text = "Выход";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MenuStockman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -175,5 +189,6 @@ namespace SewingApp.Pages
         private System.Windows.Forms.DataGridView dgFurniture;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgSupply;
+        private System.Windows.Forms.Button btnExit;
     }
 }

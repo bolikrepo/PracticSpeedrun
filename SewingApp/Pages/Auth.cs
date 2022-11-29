@@ -12,7 +12,7 @@ namespace SewingApp.Pages
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ForceAuth()
         {
             string login = textBox1.Text, passwd = textBox2.Text;
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(passwd))
@@ -22,7 +22,7 @@ namespace SewingApp.Pages
             }
 
             var user = Globals.DB.User.Where(u => u.Login == login && u.Password == passwd).FirstOrDefault();
-            
+
             if (user == null)
             {
                 MessageBox.Show("Неверный логин или пароль!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -49,6 +49,11 @@ namespace SewingApp.Pages
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ForceAuth();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             MainForm.Instance.PrimaryControl = new Pages.Register();
@@ -57,6 +62,15 @@ namespace SewingApp.Pages
         private void Auth_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void Auth_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ForceAuth();
+            }
         }
     }
 }

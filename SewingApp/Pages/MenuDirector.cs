@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -15,6 +8,12 @@ namespace SewingApp.Pages
         public MenuDirector()
         {
             InitializeComponent();
+            tabPage1.SetPrimaryControl(new ProductList());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateTo(new Pages.Auth());
         }
     }
 }

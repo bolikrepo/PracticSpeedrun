@@ -30,14 +30,5 @@ namespace SewingApp
             PrimaryControl = new Pages.Auth();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

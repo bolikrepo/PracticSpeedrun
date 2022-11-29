@@ -15,5 +15,10 @@ namespace SewingApp.Pages
             dgFabric.EnsureData(Globals.DB.Fabric);
             dgFurniture.EnsureData(Globals.DB.Furniture);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateTo(new Pages.Auth());
+        }
     }
 }

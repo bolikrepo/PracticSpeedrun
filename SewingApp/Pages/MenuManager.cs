@@ -15,5 +15,10 @@ namespace SewingApp.Pages
             tabPage1.SetPrimaryControl(new Pages.Orders());
             tabPage2.SetPrimaryControl(new Pages.ProductList());
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateTo(new Pages.Auth());
+        }
     }
 }

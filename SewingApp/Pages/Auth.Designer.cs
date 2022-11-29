@@ -123,6 +123,7 @@
             this.Name = "Auth";
             this.Size = new System.Drawing.Size(816, 477);
             this.Load += new System.EventHandler(this.Auth_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auth_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
