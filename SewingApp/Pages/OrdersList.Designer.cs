@@ -33,8 +33,6 @@ namespace SewingApp.Pages
             this.dgOrders = new System.Windows.Forms.DataGridView();
             this.PayButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnCreateProduct = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,35 +80,10 @@ namespace SewingApp.Pages
             this.EditButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.EditButton.UseColumnTextForButtonValue = true;
             // 
-            // btnCreateProduct
-            // 
-            this.btnCreateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreateProduct.Location = new System.Drawing.Point(212, 6);
-            this.btnCreateProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCreateProduct.Name = "btnCreateProduct";
-            this.btnCreateProduct.Size = new System.Drawing.Size(174, 26);
-            this.btnCreateProduct.TabIndex = 5;
-            this.btnCreateProduct.Text = "Новое изделие";
-            this.btnCreateProduct.UseVisualStyleBackColor = true;
-            this.btnCreateProduct.Click += new System.EventHandler(this.btnCreateProduct_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(394, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Заказ: Не выбран";
-            // 
             // OrdersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCreateProduct);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.dgOrders);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -120,7 +93,6 @@ namespace SewingApp.Pages
             this.Load += new System.EventHandler(this.OrdersList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -128,8 +100,6 @@ namespace SewingApp.Pages
 
         private System.Windows.Forms.Button btnCreateOrder;
         private System.Windows.Forms.DataGridView dgOrders;
-        private System.Windows.Forms.Button btnCreateProduct;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewButtonColumn PayButton;
         private System.Windows.Forms.DataGridViewButtonColumn EditButton;
     }

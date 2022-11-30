@@ -2,8 +2,6 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data.Entity;
-using System.Collections.Generic;
 
 namespace SewingApp.Pages
 {
@@ -11,10 +9,10 @@ namespace SewingApp.Pages
     {
         public Order Order { get; }
 
-        public OrderEditMenu(Order order)
+        public OrderEditMenu()
         {
             InitializeComponent();
-            Order = order;
+            Order = Globals.Context.CurrentOrder;
         }
 
         private void OrderEditMenu_Load(object sender, EventArgs e)
@@ -32,6 +30,7 @@ namespace SewingApp.Pages
             dataGridView1.EnsureComboBox(2, Globals.DB.Product);
             dataGridView1.EnsureComboBox(3, Globals.DB.Fabric);
             dataGridView1.EnsureComboBox(4, Globals.DB.Furniture);
+            dataGridView1.EnsureComboBox(5, Globals.DB.Fabric);
 
             dataGridView1.EnsureComboBox(7, Globals.DB.Unit);
             dataGridView1.EnsureComboBox(9, Globals.DB.Unit);
@@ -50,14 +49,7 @@ namespace SewingApp.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (dataGridView1.DataSource as List<OrderItem>).Add(
-                new OrderItem
-                {
-                    IdOrder = Order.Id,
-                }
-            );
-
-            //Refill();
+            Globals.NavigateTo(new Pages.OrderItemConstructor());
         }
     }
 }

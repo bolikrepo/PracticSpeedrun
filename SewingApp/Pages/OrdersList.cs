@@ -50,33 +50,12 @@ namespace SewingApp.Pages
             {
                 if (dgOrders.DataSource is List<Order> dl)
                 {
-                    var order = dl[e.RowIndex];
-                    Globals.NavigateTo(new Pages.OrderEditMenu(order));
-                }
-            }
-            else
-            {
-                if (dgOrders.DataSource is List<Order> dl)
-                {
-                    var tar = dl[e.RowIndex];
-                    label1.Text = $"Заказ: {tar.Id}";
-                    Globals.Context.CurrentOrder = tar;
+                    Globals.Context.CurrentOrder = dl[e.RowIndex];
+                    Globals.NavigateTo(new Pages.OrderEditMenu());
                 }
             }
         }
 
-        private void btnCreateProduct_Click(object sender, EventArgs e)
-        {
-            if (Globals.Context.CurrentOrder == null)
-            {
-                MessageBox.Show(
-                    "Не выбран заказ!", "Ошибка!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error
-                );
-                return;
-            }
-            Globals.NavigateTo(new Pages.ProductConstructor());
-        }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {

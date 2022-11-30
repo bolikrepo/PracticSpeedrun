@@ -1,7 +1,7 @@
 ﻿
 namespace SewingApp.Pages
 {
-    partial class ProductConstructor
+    partial class OrderItemConstructor
     {
         /// <summary> 
         /// Required designer variable.
@@ -281,7 +281,7 @@ namespace SewingApp.Pages
             // btnOrder
             // 
             this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(172, 401);
+            this.btnOrder.Location = new System.Drawing.Point(169, 401);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(136, 41);
             this.btnOrder.TabIndex = 16;
@@ -521,7 +521,7 @@ namespace SewingApp.Pages
             this.cbProduct.TabIndex = 0;
             this.cbProduct.SelectedIndexChanged += new System.EventHandler(this.cbProduct_SelectedIndexChanged);
             // 
-            // ProductConstructor
+            // OrderItemConstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -529,7 +529,7 @@ namespace SewingApp.Pages
             this.Controls.Add(this.dgProductList);
             this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "ProductConstructor";
+            this.Name = "OrderItemConstructor";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.ProductConstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProductList)).EndInit();

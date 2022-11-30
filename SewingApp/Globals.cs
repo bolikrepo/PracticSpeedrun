@@ -67,7 +67,10 @@ namespace SewingApp
             where T : class
         {
             if (data.Count() <= 0)
+            {
                 data.Load();
+                MessageBox.Show($"LOAD");
+            }
 
             var basedCols = dataGrid.Columns.Cast<DataGridViewColumn>().Where(
                 c => (
@@ -89,7 +92,7 @@ namespace SewingApp
                     dataGrid.Columns[item].Visible = false;
             }
 
-            //dataGrid.AllowUserToAddRows = canEdit;
+            dataGrid.AllowUserToAddRows = canEdit;
             dataGrid.AllowUserToDeleteRows = canEdit;
             dataGrid.ReadOnly = !canEdit;
         }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SewingApp.Pages
 {
-    public partial class ProductConstructor : UserControl
+    public partial class OrderItemConstructor : UserControl
     {
 
         public static OpenFileDialog ImageFileDialog = new OpenFileDialog
@@ -18,7 +18,7 @@ namespace SewingApp.Pages
               "Portable Network Graphic (*.png)|*.png"
         };
 
-        public ProductConstructor()
+        public OrderItemConstructor()
         {
             InitializeComponent();
         }
@@ -105,7 +105,7 @@ namespace SewingApp.Pages
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Globals.NavigateToRoleMenu();
+            Globals.NavigateTo(new Pages.OrderEditMenu());
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace SewingApp.Pages
             });
             Globals.DB.SaveChanges();
 
-            Globals.NavigateToRoleMenu();
+            Globals.NavigateTo(new Pages.OrderEditMenu());
         }
     }
 }
