@@ -29,10 +29,17 @@ namespace SewingApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -42,13 +49,31 @@ namespace SewingApp.Pages
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.sewingDBDataSet = new SewingApp.SewingDBDataSet();
+            this.orderItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderItemTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.OrderItemTableAdapter();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.ProductTableAdapter();
+            this.furnitureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.furnitureTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.FurnitureTableAdapter();
+            this.fabricBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fabricTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.FabricTableAdapter();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitTableAdapter = new SewingApp.SewingDBDataSetTableAdapters.UnitTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idFabricDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idFurnitureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idBorderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.widthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUnitWidthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUnitHeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rotationAngleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,6 +82,12 @@ namespace SewingApp.Pages
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnitureBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabricBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -118,12 +149,77 @@ namespace SewingApp.Pages
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.idOrderDataGridViewTextBoxColumn,
+            this.idProductDataGridViewTextBoxColumn,
+            this.idFabricDataGridViewTextBoxColumn,
+            this.idFurnitureDataGridViewTextBoxColumn,
+            this.idBorderDataGridViewTextBoxColumn,
+            this.widthDataGridViewTextBoxColumn,
+            this.idUnitWidthDataGridViewTextBoxColumn,
+            this.heightDataGridViewTextBoxColumn,
+            this.idUnitHeightDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.rotationAngleDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.orderItemBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(388, 209);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(116, 190);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(286, 32);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(168, 263);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(234, 29);
+            this.textBox7.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(2, 266);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(160, 24);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Достаточно для:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(111, 228);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(291, 29);
+            this.textBox6.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 229);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 24);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Доступно:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 24);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "На складе:";
             // 
             // textBox4
             // 
@@ -198,55 +294,6 @@ namespace SewingApp.Pages
             this.label2.TabIndex = 2;
             this.label2.Text = "Заказ:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 24);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "На складе:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(111, 228);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(291, 29);
-            this.textBox6.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 229);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 24);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Доступно:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(168, 263);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(234, 29);
-            this.textBox7.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(2, 266);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(160, 24);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Достаточно для:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 190);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(286, 32);
-            this.comboBox1.TabIndex = 14;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(3, 2);
@@ -255,6 +302,160 @@ namespace SewingApp.Pages
             this.button2.TabIndex = 3;
             this.button2.Text = "Оформить";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // sewingDBDataSet
+            // 
+            this.sewingDBDataSet.DataSetName = "SewingDBDataSet";
+            this.sewingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderItemBindingSource
+            // 
+            this.orderItemBindingSource.DataMember = "OrderItem";
+            this.orderItemBindingSource.DataSource = this.sewingDBDataSet;
+            // 
+            // orderItemTableAdapter
+            // 
+            this.orderItemTableAdapter.ClearBeforeFill = true;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.sewingDBDataSet;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // furnitureBindingSource
+            // 
+            this.furnitureBindingSource.DataMember = "Furniture";
+            this.furnitureBindingSource.DataSource = this.sewingDBDataSet;
+            // 
+            // furnitureTableAdapter
+            // 
+            this.furnitureTableAdapter.ClearBeforeFill = true;
+            // 
+            // fabricBindingSource
+            // 
+            this.fabricBindingSource.DataMember = "Fabric";
+            this.fabricBindingSource.DataSource = this.sewingDBDataSet;
+            // 
+            // fabricTableAdapter
+            // 
+            this.fabricTableAdapter.ClearBeforeFill = true;
+            // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataMember = "Unit";
+            this.unitBindingSource.DataSource = this.sewingDBDataSet;
+            // 
+            // unitTableAdapter
+            // 
+            this.unitTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idOrderDataGridViewTextBoxColumn
+            // 
+            this.idOrderDataGridViewTextBoxColumn.DataPropertyName = "IdOrder";
+            this.idOrderDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
+            this.idOrderDataGridViewTextBoxColumn.Name = "idOrderDataGridViewTextBoxColumn";
+            // 
+            // idProductDataGridViewTextBoxColumn
+            // 
+            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "IdProduct";
+            this.idProductDataGridViewTextBoxColumn.DataSource = this.productBindingSource;
+            this.idProductDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.idProductDataGridViewTextBoxColumn.HeaderText = "Продукт";
+            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
+            this.idProductDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idProductDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idProductDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // idFabricDataGridViewTextBoxColumn
+            // 
+            this.idFabricDataGridViewTextBoxColumn.DataPropertyName = "IdFabric";
+            this.idFabricDataGridViewTextBoxColumn.DataSource = this.fabricBindingSource;
+            this.idFabricDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.idFabricDataGridViewTextBoxColumn.HeaderText = "Ткань";
+            this.idFabricDataGridViewTextBoxColumn.Name = "idFabricDataGridViewTextBoxColumn";
+            this.idFabricDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idFabricDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idFabricDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // idFurnitureDataGridViewTextBoxColumn
+            // 
+            this.idFurnitureDataGridViewTextBoxColumn.DataPropertyName = "IdFurniture";
+            this.idFurnitureDataGridViewTextBoxColumn.DataSource = this.furnitureBindingSource;
+            this.idFurnitureDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.idFurnitureDataGridViewTextBoxColumn.HeaderText = "Фурнитура";
+            this.idFurnitureDataGridViewTextBoxColumn.Name = "idFurnitureDataGridViewTextBoxColumn";
+            this.idFurnitureDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idFurnitureDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idFurnitureDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // idBorderDataGridViewTextBoxColumn
+            // 
+            this.idBorderDataGridViewTextBoxColumn.DataPropertyName = "IdBorder";
+            this.idBorderDataGridViewTextBoxColumn.HeaderText = "IdBorder";
+            this.idBorderDataGridViewTextBoxColumn.Name = "idBorderDataGridViewTextBoxColumn";
+            // 
+            // widthDataGridViewTextBoxColumn
+            // 
+            this.widthDataGridViewTextBoxColumn.DataPropertyName = "Width";
+            this.widthDataGridViewTextBoxColumn.HeaderText = "Ширина";
+            this.widthDataGridViewTextBoxColumn.Name = "widthDataGridViewTextBoxColumn";
+            // 
+            // idUnitWidthDataGridViewTextBoxColumn
+            // 
+            this.idUnitWidthDataGridViewTextBoxColumn.DataPropertyName = "IdUnitWidth";
+            this.idUnitWidthDataGridViewTextBoxColumn.DataSource = this.unitBindingSource;
+            this.idUnitWidthDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.idUnitWidthDataGridViewTextBoxColumn.HeaderText = "ед";
+            this.idUnitWidthDataGridViewTextBoxColumn.Name = "idUnitWidthDataGridViewTextBoxColumn";
+            this.idUnitWidthDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idUnitWidthDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idUnitWidthDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // heightDataGridViewTextBoxColumn
+            // 
+            this.heightDataGridViewTextBoxColumn.DataPropertyName = "Height";
+            this.heightDataGridViewTextBoxColumn.HeaderText = "Высота";
+            this.heightDataGridViewTextBoxColumn.Name = "heightDataGridViewTextBoxColumn";
+            // 
+            // idUnitHeightDataGridViewTextBoxColumn
+            // 
+            this.idUnitHeightDataGridViewTextBoxColumn.DataPropertyName = "IdUnitHeight";
+            this.idUnitHeightDataGridViewTextBoxColumn.DataSource = this.unitBindingSource;
+            this.idUnitHeightDataGridViewTextBoxColumn.DisplayMember = "Name";
+            this.idUnitHeightDataGridViewTextBoxColumn.HeaderText = "ед";
+            this.idUnitHeightDataGridViewTextBoxColumn.Name = "idUnitHeightDataGridViewTextBoxColumn";
+            this.idUnitHeightDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idUnitHeightDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idUnitHeightDataGridViewTextBoxColumn.ValueMember = "Id";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // rotationAngleDataGridViewTextBoxColumn
+            // 
+            this.rotationAngleDataGridViewTextBoxColumn.DataPropertyName = "RotationAngle";
+            this.rotationAngleDataGridViewTextBoxColumn.HeaderText = "Поворот";
+            this.rotationAngleDataGridViewTextBoxColumn.Name = "rotationAngleDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
             // 
             // Cutting
             // 
@@ -268,6 +469,7 @@ namespace SewingApp.Pages
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Cutting";
             this.Size = new System.Drawing.Size(800, 450);
+            this.Load += new System.EventHandler(this.Cutting_Load_1);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -277,6 +479,12 @@ namespace SewingApp.Pages
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sewingDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnitureBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabricBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +512,29 @@ namespace SewingApp.Pages
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource orderItemBindingSource;
+        private SewingDBDataSet sewingDBDataSet;
+        private SewingDBDataSetTableAdapters.OrderItemTableAdapter orderItemTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idProductDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idFabricDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource fabricBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idFurnitureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource furnitureBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBorderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn widthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idUnitWidthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource unitBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idUnitHeightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rotationAngleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private SewingDBDataSetTableAdapters.ProductTableAdapter productTableAdapter;
+        private SewingDBDataSetTableAdapters.FurnitureTableAdapter furnitureTableAdapter;
+        private SewingDBDataSetTableAdapters.FabricTableAdapter fabricTableAdapter;
+        private SewingDBDataSetTableAdapters.UnitTableAdapter unitTableAdapter;
     }
 }
