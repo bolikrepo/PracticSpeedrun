@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data.Entity;
 using System.Collections.Generic;
 
 namespace SewingApp.Pages
@@ -11,49 +10,53 @@ namespace SewingApp.Pages
         public OrdersList()
         {
             InitializeComponent();
-
-            Globals.DB.OrderState.Load();
-            Globals.DB.Order.Load();
         }
 
         private void OrdersList_Load(object sender, EventArgs e)
         {
-            orderStateBindingSource.DataSource = Globals.DB.OrderState.Local.ToList();
-            orderBindingSource.DataSource = Globals.DB.Order.Local.ToList();
+            Refill();
+        }
+
+        public void Refill()
+        {
+            dgOrders.EnsureData(Globals.DB.Order);
+            dgOrders.EnsureComboBox(1, Globals.DB.User);
+            dgOrders.EnsureComboBox(3, Globals.DB.OrderState);
+            dgOrders.EnsureComboBox(4, Globals.DB.User);
         }
 
         private void dgOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == dgOrders.Columns["PayButton"].Index)
             {
-                if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
+                if (dgOrders.DataSource is List<Order> dl)
                 {
-                    DialogResult dr = MessageBox.Show("Вы точно хотите оплатить заказ?",
-                      "Оплата заказа", MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
+                    var order = dl[e.RowIndex];
+                    if (
+                        MessageBox.Show(
+                            "Вы точно хотите оплатить заказ?", "Оплата заказа", 
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                        ) == DialogResult.Yes
+                    )
                     {
-
-                        int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
-                        Order order = Globals.DB.Order.Where(u => u.IdUser == 8 && u.Id == orderID).FirstOrDefault();
                         order.IdState = 6;
-
                         Globals.DB.SaveChanges();
 
-                        dgOrders.DataSource = Globals.DB.Order.Where(u => u.IdUser == 8).ToList();
+                        Refill();
                     }
                 }
             }
             else if (e.ColumnIndex == dgOrders.Columns["EditButton"].Index)
             {
-                if (dgOrders.Rows[e.RowIndex].Cells[0].Value != null)
+                if (dgOrders.DataSource is List<Order> dl)
                 {
-                    int orderID = Convert.ToInt32(dgOrders.Rows[e.RowIndex].Cells[0].Value);
-                    MainForm.Instance.PrimaryControl = new Pages.OrderEditMenu(orderID);
+                    var order = dl[e.RowIndex];
+                    Globals.NavigateTo(new Pages.OrderEditMenu(order));
                 }
             }
             else
             {
-                if (orderBindingSource.DataSource is List<Order> dl)
+                if (dgOrders.DataSource is List<Order> dl)
                 {
                     var tar = dl[e.RowIndex];
                     label1.Text = $"Заказ: {tar.Id}";
@@ -75,5 +78,9 @@ namespace SewingApp.Pages
             Globals.NavigateTo(new Pages.ProductConstructor());
         }
 
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

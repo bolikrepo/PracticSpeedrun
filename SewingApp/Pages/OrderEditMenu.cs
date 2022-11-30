@@ -13,9 +13,9 @@ namespace SewingApp.Pages
 {
     public partial class OrderEditMenu : UserControl
     {
-        private int orderID = -1;
+        public Order Order { get; }
 
-        public OrderEditMenu(int orderID)
+        public OrderEditMenu(Order order)
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace SewingApp.Pages
             Globals.DB.Product.Load();
             Globals.DB.Order.Load();
 
-            this.orderID = orderID;
+            Order = order;
         }
 
         private void OrderEditMenu_Load(object sender, EventArgs e)
@@ -37,16 +37,17 @@ namespace SewingApp.Pages
             unitBindingSource.DataSource = Globals.DB.Unit.Local.ToList();
             productBindingSource.DataSource = Globals.DB.Product.Local.ToList();
 
-            dataGridView1.DataSource = Globals.DB.OrderItem.Where(u => u.IdOrder == this.orderID).ToList();
+            dataGridView1.DataSource = Globals.DB.OrderItem.Where(u => u.Id == Order.Id).ToList();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            Globals.NavigateToRoleMenu();
         }
 
-        private void BtnCreateOrder_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            Globals.DB.SaveChanges();
             Globals.NavigateToRoleMenu();
         }
     }

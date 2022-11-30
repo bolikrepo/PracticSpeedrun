@@ -61,7 +61,15 @@ namespace SewingApp
             where T : class
         {
             data.Load();
+            var basedCols = dataGrid.Columns.Cast<DataGridViewColumn>().ToList();
+            dataGrid.Columns.Clear();
             dataGrid.DataSource = data.ToList();
+
+            foreach (var col in basedCols)
+            {
+                dataGrid.Columns.Insert(dataGrid.Columns.Count, col);
+                col.DisplayIndex = col.Index;
+            }
 
             dataGrid.AllowUserToAddRows = false;
             dataGrid.AllowUserToDeleteRows = false;
