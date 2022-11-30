@@ -8,6 +8,7 @@ namespace SewingApp
     public static class Globals
     {
         public static SewingDBEntities DB { get; } = new SewingDBEntities();
+        public static string ImagesPath = "./Resources/Images/";
 
         public static void NavigateTo(UserControl value)
         {
@@ -57,7 +58,7 @@ namespace SewingApp
             value.Parent = control;
         }
 
-        public static void EnsureData<T>(this DataGridView dataGrid, IQueryable<T> data)
+        public static void EnsureData<T>(this DataGridView dataGrid, IQueryable<T> data, bool readOnly = true)
             where T : class
         {
             data.Load();
@@ -73,7 +74,7 @@ namespace SewingApp
 
             dataGrid.AllowUserToAddRows = false;
             dataGrid.AllowUserToDeleteRows = false;
-            dataGrid.ReadOnly = true;
+            dataGrid.ReadOnly = readOnly;
         }
 
         public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)

@@ -37,7 +37,7 @@ namespace SewingApp.Pages
             unitBindingSource.DataSource = Globals.DB.Unit.Local.ToList();
             productBindingSource.DataSource = Globals.DB.Product.Local.ToList();
 
-            dataGridView1.DataSource = Globals.DB.OrderItem.Where(u => u.Id == Order.Id).ToList();
+            dataGridView1.DataSource = Globals.DB.OrderItem.Where(u => u.IdOrder == Order.Id).ToList();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

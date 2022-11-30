@@ -9,7 +9,6 @@ namespace SewingApp.Pages
 {
     public partial class ProductConstructor : UserControl
     {
-        public string ImagesPath = "./Resources/Images/";
 
         public static OpenFileDialog ImageFileDialog = new OpenFileDialog
         {
@@ -40,11 +39,11 @@ namespace SewingApp.Pages
         {
             try
             {
-                picProduct.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Product/{(cbProduct.SelectedItem as Product)?.Id}.JPG"));
+                picProduct.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, $"Polyfills/Product/{(cbProduct.SelectedItem as Product)?.Id}.JPG"));
             }
             catch
             {
-                picProduct.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+                picProduct.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, "System/no-image.jpg"));
             }
         }
 
@@ -52,11 +51,11 @@ namespace SewingApp.Pages
         {
             try
             {
-                picFabric.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Fabric/{(cbFabric.SelectedItem as Fabric)?.Id}.jpg"));
+                picFabric.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, $"Polyfills/Fabric/{(cbFabric.SelectedItem as Fabric)?.Id}.jpg"));
             }
             catch
             {
-                picFabric.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+                picFabric.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, "System/no-image.jpg"));
             }
         }
 
@@ -64,11 +63,11 @@ namespace SewingApp.Pages
         {
             try
             {
-                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Furniture/{(cbFurniture.SelectedItem as Furniture)?.Id}.jpg"));
+                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, $"Polyfills/Furniture/{(cbFurniture.SelectedItem as Furniture)?.Id}.jpg"));
             }
             catch
             {
-                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+                picFurniture.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, "System/no-image.jpg"));
             }
         }
 
@@ -77,11 +76,11 @@ namespace SewingApp.Pages
             try
             {
 
-                picBorder.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, $"Polyfills/Fabric/{(cbBorder.SelectedItem as Fabric)?.Id}.jpg"));
+                picBorder.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, $"Polyfills/Fabric/{(cbBorder.SelectedItem as Fabric)?.Id}.jpg"));
             }
             catch
             {
-                picBorder.BackgroundImage = Image.FromFile(Path.Combine(ImagesPath, "System/no-image.jpg"));
+                picBorder.BackgroundImage = Image.FromFile(Path.Combine(Globals.ImagesPath, "System/no-image.jpg"));
             }
         }
 
