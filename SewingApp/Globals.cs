@@ -58,11 +58,23 @@ namespace SewingApp
             value.Parent = control;
         }
 
-        public static void EnsureData<T>(this DataGridView dataGrid, IQueryable<T> data, bool readOnly = true)
+        public static void EnsureData<T>(
+            this DataGridView dataGrid, 
+            IQueryable<T> data, 
+            int[] hidden = null,
+            bool canEdit = false
+        )
             where T : class
         {
-            data.Load();
-            var basedCols = dataGrid.Columns.Cast<DataGridViewColumn>().ToList();
+            if (data.Count() <= 0)
+                data.Load();
+
+            var basedCols = dataGrid.Columns.Cast<DataGridViewColumn>().Where(
+                c => (
+                    c is DataGridViewButtonColumn 
+                    || c is DataGridViewImageColumn
+                )
+            ).ToList();
             dataGrid.Columns.Clear();
             dataGrid.DataSource = data.ToList();
 
@@ -71,10 +83,15 @@ namespace SewingApp
                 dataGrid.Columns.Insert(dataGrid.Columns.Count, col);
                 col.DisplayIndex = col.Index;
             }
+            if (hidden != null)
+            {
+                foreach (var item in hidden)
+                    dataGrid.Columns[item].Visible = false;
+            }
 
-            dataGrid.AllowUserToAddRows = false;
-            dataGrid.AllowUserToDeleteRows = false;
-            dataGrid.ReadOnly = readOnly;
+            //dataGrid.AllowUserToAddRows = canEdit;
+            dataGrid.AllowUserToDeleteRows = canEdit;
+            dataGrid.ReadOnly = !canEdit;
         }
 
         public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)

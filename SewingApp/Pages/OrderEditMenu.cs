@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace SewingApp.Pages
 {
@@ -18,26 +14,27 @@ namespace SewingApp.Pages
         public OrderEditMenu(Order order)
         {
             InitializeComponent();
-
-            Globals.DB.OrderItem.Load();
-            Globals.DB.Fabric.Load();
-            Globals.DB.Furniture.Load();
-            Globals.DB.Unit.Load();
-            Globals.DB.Product.Load();
-            Globals.DB.Order.Load();
-
             Order = order;
         }
 
         private void OrderEditMenu_Load(object sender, EventArgs e)
         {
-            orderItemBindingSource.DataSource = Globals.DB.OrderItem.Local.ToList();
-            fabricBindingSource.DataSource = Globals.DB.Fabric.Local.ToList();
-            furnitureBindingSource.DataSource = Globals.DB.Furniture.Local.ToList();
-            unitBindingSource.DataSource = Globals.DB.Unit.Local.ToList();
-            productBindingSource.DataSource = Globals.DB.Product.Local.ToList();
+            Refill();
+        }
 
-            dataGridView1.DataSource = Globals.DB.OrderItem.Where(u => u.IdOrder == Order.Id).ToList();
+        private void Refill()
+        {
+            dataGridView1.EnsureData(
+                Globals.DB.OrderItem.Where(or => or.IdOrder == Order.Id),
+                hidden: new[] { 1 },
+                canEdit: true
+            );
+            dataGridView1.EnsureComboBox(2, Globals.DB.Product);
+            dataGridView1.EnsureComboBox(3, Globals.DB.Fabric);
+            dataGridView1.EnsureComboBox(4, Globals.DB.Furniture);
+
+            dataGridView1.EnsureComboBox(7, Globals.DB.Unit);
+            dataGridView1.EnsureComboBox(9, Globals.DB.Unit);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -49,6 +46,18 @@ namespace SewingApp.Pages
         {
             Globals.DB.SaveChanges();
             Globals.NavigateToRoleMenu();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as List<OrderItem>).Add(
+                new OrderItem
+                {
+                    IdOrder = Order.Id,
+                }
+            );
+
+            //Refill();
         }
     }
 }

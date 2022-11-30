@@ -45,6 +45,7 @@ namespace SewingApp.Pages
             this.dgProductList.Size = new System.Drawing.Size(800, 450);
             this.dgProductList.TabIndex = 0;
             this.dgProductList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgProductList_CellFormatting);
+            this.dgProductList.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgProductList_DataError);
             // 
             // image
             // 

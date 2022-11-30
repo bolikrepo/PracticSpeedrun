@@ -15,6 +15,7 @@ namespace SewingApp.Pages
         private void ProductList_Load(object sender, System.EventArgs e)
         {
             dgProductList.EnsureData(Globals.DB.Product);
+
         }
 
         private void dgProductList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -29,6 +30,15 @@ namespace SewingApp.Pages
                     e.Value = Bitmap.FromFile(Path.Combine(Globals.ImagesPath, "System/no-image.jpg"));
                 }
                 e.FormattingApplied = true;
+            }
+        }
+
+        private void dgProductList_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                e.ThrowException = false;
+                e.Cancel = true;
             }
         }
     }

@@ -23,7 +23,7 @@ namespace SewingApp.Pages
                     dgOrders.EnsureData(Globals.DB.Order.Where(u => u.IdUser == Globals.Context.CurrentUser.Id));
                     break;
                 case 2:  // Менеджер
-                    btnCreateOrder.Enabled = false;
+                    //btnCreateOrder.Enabled = false;
                     dgOrders.EnsureData(Globals.DB.Order.Where(
                         u => u.IdManager == null
                         || u.IdManager == Globals.Context.CurrentUser.Id
@@ -43,7 +43,7 @@ namespace SewingApp.Pages
                 IdUser = Globals.Context.CurrentUser.Id
             };
 
-            Globals.NavigateTo(new Pages.OrdersList());
+            //Globals.NavigateTo(new Pages.OrdersList());
         }
     }
 }
