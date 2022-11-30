@@ -30,17 +30,27 @@ namespace SewingApp.Pages
         private void InitializeComponent()
         {
             this.dgProductList = new System.Windows.Forms.DataGridView();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgProductList
             // 
             this.dgProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.image});
             this.dgProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgProductList.Location = new System.Drawing.Point(0, 0);
             this.dgProductList.Name = "dgProductList";
             this.dgProductList.Size = new System.Drawing.Size(800, 450);
             this.dgProductList.TabIndex = 0;
+            this.dgProductList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgProductList_CellFormatting);
+            // 
+            // image
+            // 
+            this.image.HeaderText = "Изображение";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
             // 
             // ProductList
             // 
@@ -58,5 +68,6 @@ namespace SewingApp.Pages
         #endregion
 
         private System.Windows.Forms.DataGridView dgProductList;
+        private System.Windows.Forms.DataGridViewImageColumn image;
     }
 }
