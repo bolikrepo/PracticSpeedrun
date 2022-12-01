@@ -146,11 +146,11 @@
     <Compile Include="Pages\OrdersList.Designer.cs">
       <DependentUpon>OrdersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ProductConstructor.cs">
+    <Compile Include="Pages\OrderItemConstructor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Pages\ProductConstructor.Designer.cs">
-      <DependentUpon>ProductConstructor.cs</DependentUpon>
+    <Compile Include="Pages\OrderItemConstructor.Designer.cs">
+      <DependentUpon>OrderItemConstructor.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductList.cs">
       <SubType>UserControl</SubType>
@@ -222,8 +222,8 @@
     <EmbeddedResource Include="Pages\OrdersList.resx">
       <DependentUpon>OrdersList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ProductConstructor.resx">
-      <DependentUpon>ProductConstructor.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\OrderItemConstructor.resx">
+      <DependentUpon>OrderItemConstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>

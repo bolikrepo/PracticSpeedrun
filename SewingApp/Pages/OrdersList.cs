@@ -54,6 +54,14 @@ namespace SewingApp.Pages
                     Globals.NavigateTo(new Pages.OrderEditMenu());
                 }
             }
+            else if (e.ColumnIndex == dgOrders.Columns["CutButton"].Index)
+            {
+                if (dgOrders.DataSource is List<Order> dl)
+                {
+                    Globals.Context.CurrentOrder = dl[e.RowIndex];
+                    Globals.NavigateTo(new Pages.Cutting());
+                }
+            }
         }
 
 

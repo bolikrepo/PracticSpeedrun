@@ -33,6 +33,7 @@ namespace SewingApp.Pages
             this.dgOrders = new System.Windows.Forms.DataGridView();
             this.PayButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CutButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@ namespace SewingApp.Pages
             this.dgOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PayButton,
-            this.EditButton});
+            this.EditButton,
+            this.CutButton});
             this.dgOrders.Location = new System.Drawing.Point(-4, 37);
             this.dgOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgOrders.Name = "dgOrders";
@@ -80,6 +82,13 @@ namespace SewingApp.Pages
             this.EditButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.EditButton.UseColumnTextForButtonValue = true;
             // 
+            // CutButton
+            // 
+            this.CutButton.HeaderText = "Раскрой";
+            this.CutButton.Name = "CutButton";
+            this.CutButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CutButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // OrdersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -102,5 +111,6 @@ namespace SewingApp.Pages
         private System.Windows.Forms.DataGridView dgOrders;
         private System.Windows.Forms.DataGridViewButtonColumn PayButton;
         private System.Windows.Forms.DataGridViewButtonColumn EditButton;
+        private System.Windows.Forms.DataGridViewButtonColumn CutButton;
     }
 }

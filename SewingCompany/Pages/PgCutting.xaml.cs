@@ -2,17 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SewingCompany.Pages
 {
@@ -37,7 +29,6 @@ namespace SewingCompany.Pages
 
         private void DgOrderList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             ItemToCut = DgOrderList.SelectedItem as OrderItem;
 
             var unitToConvert = Math.Max(ItemToCut.IdUnitHeight, ItemToCut.IdUnitWidth);
@@ -57,9 +48,6 @@ namespace SewingCompany.Pages
 
             CbFabricStock.ItemsSource = Db.Conn.FabricStock.Where(fs => fs.IdFabric == ItemToCut.IdFabric).ToList();
             CbFabricStock.SelectedIndex = 0;
-
-            
-            
         }
 
         FabricStock fabricStock;

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
@@ -66,11 +67,7 @@ namespace SewingApp
         )
             where T : class
         {
-            if (data.Count() <= 0)
-            {
-                data.Load();
-                MessageBox.Show($"LOAD");
-            }
+            if (data.Count() <= 0) data.Load();
 
             var basedCols = dataGrid.Columns.Cast<DataGridViewColumn>().Where(
                 c => (
@@ -97,10 +94,15 @@ namespace SewingApp
             dataGrid.ReadOnly = !canEdit;
         }
 
-        public static void EnsureComboBox<T>(this DataGridView dataGrid, int index, DbSet<T> data)
+        public static void EnsureComboBox<T>(
+            this DataGridView dataGrid, 
+            int index,
+            IQueryable<T> data
+        )
             where T : class
         {
             data.Load();
+
             var col = dataGrid.Columns[index];
             dataGrid.Columns.RemoveAt(index);
 
@@ -109,22 +111,30 @@ namespace SewingApp
                 Name = col.Name,
                 HeaderText = col.HeaderText,
                 DataPropertyName = col.DataPropertyName,
-                ValueMember = typeof(T).GetCustomAttributes(true).OfType<DefaultPropertyAttribute>().FirstOrDefault()?.Name,
-                DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name,
-                DataSource = data.Local.ToList()
+                ValueMember = typeof(T).GetAttribute<DefaultPropertyAttribute>()?.Name,
+                DisplayMember = typeof(T).GetAttribute<DefaultBindingPropertyAttribute>()?.Name,
+                DataSource = data.ToList()
             });
         }
 
-
-        public static void FillData<T>(this ComboBox comboBox, DbSet<T> data)
+        public static void FillData<T>(
+            this ComboBox comboBox,
+            IQueryable<T> data
+        )
             where T : class
         {
             data.Load();
-
+            
             comboBox.DataSource = data.ToList();
-            comboBox.ValueMember = typeof(T).GetCustomAttributes(true).OfType<DefaultPropertyAttribute>().FirstOrDefault()?.Name;
-            comboBox.DisplayMember = typeof(T).GetCustomAttributes(true).OfType<DefaultBindingPropertyAttribute>().FirstOrDefault()?.Name;
+            try
+            {
+                comboBox.ValueMember = typeof(T).GetAttribute<DefaultPropertyAttribute>()?.Name;
+                comboBox.DisplayMember = typeof(T).GetAttribute<DefaultBindingPropertyAttribute>()?.Name;
+            }
+            catch { }
         }
 
+
+        public static T GetAttribute<T>(this Type it) => it.GetCustomAttributes(true).OfType<T>().FirstOrDefault();
     }
 }

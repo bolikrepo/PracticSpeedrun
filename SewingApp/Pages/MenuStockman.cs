@@ -39,7 +39,7 @@ namespace SewingApp.Pages
         {
             if (SupplyFilesDialog.ShowDialog() == DialogResult.OK)
             {
-                btnApply.Enabled = true;
+                btnApply.Visible = true;
                 lbSupplyDocs.Items.Add(SupplyFilesDialog.FileName);
             }
         }

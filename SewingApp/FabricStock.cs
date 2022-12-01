@@ -12,6 +12,8 @@ namespace SewingApp
     using System;
     using System.ComponentModel;
 
+    [DefaultProperty("Id")]
+    [DefaultBindingProperty("Id")]
     public partial class FabricStock
     {
         [DisplayName("Номер")]
@@ -28,6 +30,7 @@ namespace SewingApp
         public Nullable<int> IdUnitHeight { get; set; }
         [DisplayName("Закупочная цена")]
         public Nullable<double> PurchasePrice { get; set; }
+        public override string ToString() => Id.ToString(); 
 
         [Browsable(false)]
         public virtual Fabric Fabric { get; set; }

@@ -281,7 +281,7 @@ namespace SewingApp.Pages
             // btnOrder
             // 
             this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(169, 401);
+            this.btnOrder.Location = new System.Drawing.Point(160, 401);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(136, 41);
             this.btnOrder.TabIndex = 16;
