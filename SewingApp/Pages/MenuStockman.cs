@@ -40,7 +40,11 @@ namespace SewingApp.Pages
             if (SupplyFilesDialog.ShowDialog() == DialogResult.OK)
             {
                 btnApply.Visible = true;
-                lbSupplyDocs.Items.Add(SupplyFilesDialog.FileName);
+
+                var info = new FileInfo(SupplyFilesDialog.FileName);
+
+                info.CopyTo(Path.Combine(SupplyFilesDir.FullName, info.Name));
+                lbSupplyDocs.Items.Add(info.Name);
             }
         }
 
@@ -80,8 +84,6 @@ namespace SewingApp.Pages
                 {
                     MessageBox.Show("Ошибка чтения файла \n" + ex.ToString());
                 }
-
-
             }
         }
         */
