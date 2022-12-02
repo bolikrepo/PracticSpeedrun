@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace SewingApp.Pages
             Filter = "CSV (*.csv)|*.csv"
         };
 
+        private List<FabricStock> TempStock = new List<FabricStock>();
+
         public MenuStockman()
         {
             InitializeComponent();
@@ -23,13 +26,10 @@ namespace SewingApp.Pages
 
         private void Stockman_Load(object sender, EventArgs e)
         {
-            dgFabric.EnsureData(Globals.DB.Fabric);
-            dgFurniture.EnsureData(Globals.DB.Furniture);
-
-            dgSupply.EnsureData(Globals.DB.FabricStock);
-
             lbSupplyDocs.Items.AddRange(SupplyFilesDir.GetFiles("*.csv"));
             btnDocsApply.Visible = lbSupplyDocs.Items.Count > 0;
+
+            RefillSupply();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -47,14 +47,16 @@ namespace SewingApp.Pages
 
                 info.CopyTo(Path.Combine(SupplyFilesDir.FullName, info.Name));
                 lbSupplyDocs.Items.Add(info.Name);
+
+                RefillSupply();
             }
         }
 
-        private void btnApplyDocs_Click(object sender, EventArgs e)
+        private void RefillSupply()
         {
             foreach (var item in lbSupplyDocs.Items)
             {
-                var info = new FileInfo(Path.Combine(SupplyFilesDir.FullName, item as string));
+                var info = (item as FileInfo);
                 if (info.Exists)
                 {
                     foreach (var line in File.ReadAllText(info.FullName).Split('\n'))
@@ -76,20 +78,36 @@ namespace SewingApp.Pages
                                 PurchasePrice = Convert.ToDouble(fields[5])
                             };
 
-                            Globals.DB.FabricStock.Add(supplyFileInfo);
+                            TempStock.Add(supplyFileInfo);
                         }
                         catch { }
                     }
-
-                    try
-                    {
-                        info.Delete();
-                        Globals.DB.SaveChanges();
-                    }
-                    catch { }
                 }
             }
 
+            dgSupply.DataSource = TempStock;
+            dgFabric.EnsureData(Globals.DB.Fabric);
+            dgFurniture.EnsureData(Globals.DB.Furniture);
+        }
+
+        private void btnApplyDocs_Click(object sender, EventArgs e)
+        {
+            foreach (var item in TempStock)
+            {
+                Globals.DB.FabricStock.Add(item);
+            }
+            try
+            {
+                Globals.DB.SaveChanges();
+            } catch { }
+
+            foreach (var item in lbSupplyDocs.Items)
+            {
+                var info = (item as FileInfo);
+                if (info.Exists) info.Delete();
+            }
+
+            dgSupply.DataSource = null;
             lbSupplyDocs.Items.Clear();
             btnDocsApply.Visible = false;
         }

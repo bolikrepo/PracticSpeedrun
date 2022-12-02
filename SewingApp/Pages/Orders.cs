@@ -40,10 +40,12 @@ namespace SewingApp.Pages
         {
             Globals.Context.CurrentOrder = new Order
             {
-                IdUser = Globals.Context.CurrentUser.Id
+                User = Globals.Context.CurrentUser,
+                Date = DateTime.Now,
+                IdState = 1,
+                Price = 0,
             };
-
-            //Globals.NavigateTo(new Pages.OrdersList());
+            Globals.NavigateTo(new Pages.OrderEditMenu());
         }
     }
 }
