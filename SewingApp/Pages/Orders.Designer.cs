@@ -48,20 +48,23 @@ namespace SewingApp.Pages
             // 
             // btnCreateOrder
             // 
+            this.btnCreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
             this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCreateOrder.ForeColor = System.Drawing.Color.White;
             this.btnCreateOrder.Location = new System.Drawing.Point(6, 6);
             this.btnCreateOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(168, 34);
             this.btnCreateOrder.TabIndex = 1;
             this.btnCreateOrder.Text = "Новый заказ";
-            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.UseVisualStyleBackColor = false;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.dgOrders);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

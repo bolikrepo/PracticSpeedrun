@@ -164,23 +164,27 @@ namespace SewingApp.Pages
             // btnCut
             // 
             this.btnCut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnCut.ForeColor = System.Drawing.Color.White;
             this.btnCut.Location = new System.Drawing.Point(246, 361);
             this.btnCut.Name = "btnCut";
             this.btnCut.Size = new System.Drawing.Size(156, 48);
             this.btnCut.TabIndex = 16;
             this.btnCut.Text = "Раскроить";
-            this.btnCut.UseVisualStyleBackColor = true;
+            this.btnCut.UseVisualStyleBackColor = false;
             this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
             // 
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(3, 358);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(148, 48);
             this.btnBack.TabIndex = 15;
             this.btnBack.Text = "Назад";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // cbStock
@@ -324,6 +328,7 @@ namespace SewingApp.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.Controls.Add(this.lbOrder);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

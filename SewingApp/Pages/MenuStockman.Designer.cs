@@ -188,7 +188,7 @@ namespace SewingApp.Pages
             this.lbSupplyDocs.ItemHeight = 20;
             this.lbSupplyDocs.Location = new System.Drawing.Point(1, 25);
             this.lbSupplyDocs.Name = "lbSupplyDocs";
-            this.lbSupplyDocs.Size = new System.Drawing.Size(396, 384);
+            this.lbSupplyDocs.Size = new System.Drawing.Size(394, 384);
             this.lbSupplyDocs.TabIndex = 1;
             // 
             // label1
@@ -203,13 +203,15 @@ namespace SewingApp.Pages
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(630, 6);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(150, 25);
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "Выход";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MenuStockman
@@ -217,6 +219,7 @@ namespace SewingApp.Pages
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

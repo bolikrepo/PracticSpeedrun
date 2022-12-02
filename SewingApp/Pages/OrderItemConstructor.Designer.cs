@@ -281,23 +281,27 @@ namespace SewingApp.Pages
             // btnOrder
             // 
             this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(154, 401);
+            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
+            this.btnOrder.Location = new System.Drawing.Point(151, 401);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(136, 41);
             this.btnOrder.TabIndex = 16;
             this.btnOrder.Text = "Заказать";
-            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(3, 401);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(136, 41);
             this.btnBack.TabIndex = 15;
             this.btnBack.Text = "Назад";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // inpAmount
@@ -323,12 +327,14 @@ namespace SewingApp.Pages
             // 
             // btnFurniturePath
             // 
+            this.btnFurniturePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnFurniturePath.ForeColor = System.Drawing.Color.White;
             this.btnFurniturePath.Location = new System.Drawing.Point(244, 327);
             this.btnFurniturePath.Name = "btnFurniturePath";
             this.btnFurniturePath.Size = new System.Drawing.Size(91, 31);
             this.btnFurniturePath.TabIndex = 12;
             this.btnFurniturePath.Text = "Обзор";
-            this.btnFurniturePath.UseVisualStyleBackColor = true;
+            this.btnFurniturePath.UseVisualStyleBackColor = false;
             this.btnFurniturePath.Click += new System.EventHandler(this.btnFurniturePath_Click);
             // 
             // inpFurniturePath
@@ -379,12 +385,14 @@ namespace SewingApp.Pages
             // 
             // btnFabricPath
             // 
+            this.btnFabricPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(169)))), ((int)(((byte)(175)))));
+            this.btnFabricPath.ForeColor = System.Drawing.Color.White;
             this.btnFabricPath.Location = new System.Drawing.Point(244, 208);
             this.btnFabricPath.Name = "btnFabricPath";
             this.btnFabricPath.Size = new System.Drawing.Size(91, 31);
             this.btnFabricPath.TabIndex = 6;
             this.btnFabricPath.Text = "Обзор";
-            this.btnFabricPath.UseVisualStyleBackColor = true;
+            this.btnFabricPath.UseVisualStyleBackColor = false;
             this.btnFabricPath.Click += new System.EventHandler(this.btnFabricPath_Click);
             // 
             // inpFabricPath
@@ -525,6 +533,7 @@ namespace SewingApp.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(213)))), ((int)(((byte)(202)))));
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.dgProductList);
             this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
