@@ -188,7 +188,7 @@ namespace SewingApp.Pages
             this.lbSupplyDocs.ItemHeight = 20;
             this.lbSupplyDocs.Location = new System.Drawing.Point(1, 25);
             this.lbSupplyDocs.Name = "lbSupplyDocs";
-            this.lbSupplyDocs.Size = new System.Drawing.Size(394, 384);
+            this.lbSupplyDocs.Size = new System.Drawing.Size(392, 384);
             this.lbSupplyDocs.TabIndex = 1;
             // 
             // label1

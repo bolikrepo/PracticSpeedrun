@@ -26,7 +26,7 @@ namespace SewingApp.Pages
 
         private void Stockman_Load(object sender, EventArgs e)
         {
-            lbSupplyDocs.Items.AddRange(SupplyFilesDir.GetFiles("*.csv"));
+            lbSupplyDocs.Items.AddRange(SupplyFilesDir.GetFiles("*.csv").Select(i => i.Name).ToArray());
             btnDocsApply.Visible = lbSupplyDocs.Items.Count > 0;
 
             RefillSupply();
@@ -45,7 +45,11 @@ namespace SewingApp.Pages
 
                 var info = new FileInfo(SupplyFilesDialog.FileName);
 
-                info.CopyTo(Path.Combine(SupplyFilesDir.FullName, info.Name));
+                try
+                {
+                    info.CopyTo(Path.Combine(SupplyFilesDir.FullName, info.Name));
+                }
+                catch { }
                 lbSupplyDocs.Items.Add(info.Name);
 
                 RefillSupply();
@@ -56,7 +60,7 @@ namespace SewingApp.Pages
         {
             foreach (var item in lbSupplyDocs.Items)
             {
-                var info = (item as FileInfo);
+                var info = new FileInfo(Path.Combine(SupplyFilesDir.FullName, item as string));
                 if (info.Exists)
                 {
                     foreach (var line in File.ReadAllText(info.FullName).Split('\n'))
@@ -71,10 +75,10 @@ namespace SewingApp.Pages
                                 IdFabric = fields[0],
                                 Width = Convert.ToInt32(fields[1]),
                                 IdUnitWidth = Convert.ToInt32(fields[2]),
-                                Unit = Globals.DB.Unit.Where(u => u.Id == IdUnitWidth_).First(),
+                                Unit = Globals.DB.Unit.Where(u => u.Id == IdUnitWidth_).FirstOrDefault(),
                                 Height = Convert.ToInt32(fields[3]),
                                 IdUnitHeight = Convert.ToInt32(fields[4]),
-                                Unit1 = Globals.DB.Unit.Where(u => u.Id == IdUnitHeight_).First(),
+                                Unit1 = Globals.DB.Unit.Where(u => u.Id == IdUnitHeight_).FirstOrDefault(),
                                 PurchasePrice = Convert.ToDouble(fields[5])
                             };
 
@@ -85,6 +89,7 @@ namespace SewingApp.Pages
                 }
             }
 
+            dgSupply.DataSource = null;
             dgSupply.DataSource = TempStock;
             dgFabric.EnsureData(Globals.DB.Fabric);
             dgFurniture.EnsureData(Globals.DB.Furniture);
