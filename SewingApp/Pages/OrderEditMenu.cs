@@ -13,6 +13,11 @@ namespace SewingApp.Pages
         {
             InitializeComponent();
             Order = Globals.Context.CurrentOrder;
+            if (Order.Id == 0)
+            {
+                btnSave.Enabled = true;
+                btnAdd.Enabled = false;
+            }
         }
 
         private void OrderEditMenu_Load(object sender, EventArgs e)
@@ -43,11 +48,14 @@ namespace SewingApp.Pages
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Globals.DB.Order.Add(Order);
             Globals.DB.SaveChanges();
-            Globals.NavigateToRoleMenu();
+
+            btnSave.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             Globals.NavigateTo(new Pages.OrderItemConstructor());
         }

@@ -36,8 +36,8 @@ namespace SewingApp.Pages
             this.dgFurniture = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnDocsApply = new System.Windows.Forms.Button();
+            this.btnUploadDocs = new System.Windows.Forms.Button();
             this.dgSupply = new System.Windows.Forms.DataGridView();
             this.lbSupplyDocs = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,8 +130,8 @@ namespace SewingApp.Pages
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnApply);
-            this.splitContainer1.Panel1.Controls.Add(this.btnUpload);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDocsApply);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUploadDocs);
             this.splitContainer1.Panel1.Controls.Add(this.dgSupply);
             // 
             // splitContainer1.Panel2
@@ -143,28 +143,29 @@ namespace SewingApp.Pages
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 2;
             // 
-            // btnApply
+            // btnDocsApply
             // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnApply.Location = new System.Drawing.Point(3, 387);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(183, 22);
-            this.btnApply.TabIndex = 2;
-            this.btnApply.Text = "Принять на учет";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Visible = false;
+            this.btnDocsApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDocsApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDocsApply.Location = new System.Drawing.Point(3, 387);
+            this.btnDocsApply.Name = "btnDocsApply";
+            this.btnDocsApply.Size = new System.Drawing.Size(223, 22);
+            this.btnDocsApply.TabIndex = 2;
+            this.btnDocsApply.Text = "Проверить документы";
+            this.btnDocsApply.UseVisualStyleBackColor = true;
+            this.btnDocsApply.Visible = false;
+            this.btnDocsApply.Click += new System.EventHandler(this.btnApplyDocs_Click);
             // 
-            // btnUpload
+            // btnUploadDocs
             // 
-            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUpload.Location = new System.Drawing.Point(3, 0);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(153, 26);
-            this.btnUpload.TabIndex = 1;
-            this.btnUpload.Text = "Загрузить файл";
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            this.btnUploadDocs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUploadDocs.Location = new System.Drawing.Point(3, 0);
+            this.btnUploadDocs.Name = "btnUploadDocs";
+            this.btnUploadDocs.Size = new System.Drawing.Size(153, 26);
+            this.btnUploadDocs.TabIndex = 1;
+            this.btnUploadDocs.Text = "Загрузить файл";
+            this.btnUploadDocs.UseVisualStyleBackColor = true;
+            this.btnUploadDocs.Click += new System.EventHandler(this.btnUploadDocs_Click);
             // 
             // dgSupply
             // 
@@ -187,7 +188,7 @@ namespace SewingApp.Pages
             this.lbSupplyDocs.ItemHeight = 20;
             this.lbSupplyDocs.Location = new System.Drawing.Point(1, 25);
             this.lbSupplyDocs.Name = "lbSupplyDocs";
-            this.lbSupplyDocs.Size = new System.Drawing.Size(400, 384);
+            this.lbSupplyDocs.Size = new System.Drawing.Size(396, 384);
             this.lbSupplyDocs.TabIndex = 1;
             // 
             // label1
@@ -251,7 +252,7 @@ namespace SewingApp.Pages
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbSupplyDocs;
-        private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnUploadDocs;
+        private System.Windows.Forms.Button btnDocsApply;
     }
 }

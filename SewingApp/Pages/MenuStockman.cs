@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SewingApp.Pages
@@ -28,6 +29,7 @@ namespace SewingApp.Pages
             dgSupply.EnsureData(Globals.DB.FabricStock);
 
             lbSupplyDocs.Items.AddRange(SupplyFilesDir.GetFiles("*.csv"));
+            btnDocsApply.Visible = lbSupplyDocs.Items.Count > 0;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -35,11 +37,11 @@ namespace SewingApp.Pages
             Globals.NavigateTo(new Pages.Auth());
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void btnUploadDocs_Click(object sender, EventArgs e)
         {
             if (SupplyFilesDialog.ShowDialog() == DialogResult.OK)
             {
-                btnApply.Visible = true;
+                btnDocsApply.Visible = true;
 
                 var info = new FileInfo(SupplyFilesDialog.FileName);
 
@@ -48,44 +50,49 @@ namespace SewingApp.Pages
             }
         }
 
-        /*
-        private void ParseCsvSupplyFile(string filePath)
+        private void btnApplyDocs_Click(object sender, EventArgs e)
         {
-
-            using (TextFieldParser parser = new TextFieldParser(filePath))
+            foreach (var item in lbSupplyDocs.Items)
             {
-                try
+                var info = new FileInfo(Path.Combine(SupplyFilesDir.FullName, item as string));
+                if (info.Exists)
                 {
-                    DgSupplyFileContnet.Items.Clear();
-                    parser.TextFieldType = FieldType.Delimited;
-                    parser.SetDelimiters(";");
-                    string[] fields = parser.ReadFields();
-                    while (!parser.EndOfData)
+                    foreach (var line in File.ReadAllText(info.FullName).Split('\n'))
                     {
-                        fields = parser.ReadFields();
-                        int IdUnitWidth_ = Convert.ToInt32(fields[2]);
-                        int IdUnitHeight_ = Convert.ToInt32(fields[4]);
-                        FabricStock supplyFileInfo = new FabricStock
+                        try
                         {
-                            IdFabric = fields[0],
-                            Width = Convert.ToInt32(fields[1]),
-                            IdUnitWidth = Convert.ToInt32(fields[2]),
-                            Unit = Db.Conn.Unit.Where(u => u.Id == IdUnitWidth_).First(),
-                            Height = Convert.ToInt32(fields[3]),
-                            IdUnitHeight = Convert.ToInt32(fields[4]),
-                            Unit1 = Db.Conn.Unit.Where(u => u.Id == IdUnitHeight_).First(),
-                            PurchasePrice = Convert.ToDouble(fields[5])
-                        };
-                        DgSupplyFileContnet.Items.Add(supplyFileInfo);
+                            var fields = line.Split(';');
+                            int IdUnitWidth_ = Convert.ToInt32(fields[2]);
+                            int IdUnitHeight_ = Convert.ToInt32(fields[4]);
+                            FabricStock supplyFileInfo = new FabricStock
+                            {
+                                IdFabric = fields[0],
+                                Width = Convert.ToInt32(fields[1]),
+                                IdUnitWidth = Convert.ToInt32(fields[2]),
+                                Unit = Globals.DB.Unit.Where(u => u.Id == IdUnitWidth_).First(),
+                                Height = Convert.ToInt32(fields[3]),
+                                IdUnitHeight = Convert.ToInt32(fields[4]),
+                                Unit1 = Globals.DB.Unit.Where(u => u.Id == IdUnitHeight_).First(),
+                                PurchasePrice = Convert.ToDouble(fields[5])
+                            };
 
+                            Globals.DB.FabricStock.Add(supplyFileInfo);
+                        }
+                        catch { }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ошибка чтения файла \n" + ex.ToString());
+
+                    try
+                    {
+                        info.Delete();
+                        Globals.DB.SaveChanges();
+                    }
+                    catch { }
                 }
             }
+
+            lbSupplyDocs.Items.Clear();
+            btnDocsApply.Visible = false;
         }
-        */
+
     }
 }

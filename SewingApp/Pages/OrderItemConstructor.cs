@@ -139,6 +139,9 @@ namespace SewingApp.Pages
                 Amount = Convert.ToInt32(inpAmount.Text),
                 Price = productPrice
             });
+
+            Globals.Context.CurrentOrder.Price += productPrice;
+
             Globals.DB.SaveChanges();
 
             Globals.NavigateTo(new Pages.OrderEditMenu());

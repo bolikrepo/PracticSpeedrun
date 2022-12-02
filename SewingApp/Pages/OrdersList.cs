@@ -64,10 +64,16 @@ namespace SewingApp.Pages
             }
         }
 
-
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-
+            Globals.Context.CurrentOrder = new Order
+            {
+                User = Globals.Context.CurrentUser,
+                Date = DateTime.Now,
+                IdState = 1,
+                Price = 0,
+            };
+            Globals.NavigateTo(new Pages.OrderEditMenu());
         }
     }
 }
