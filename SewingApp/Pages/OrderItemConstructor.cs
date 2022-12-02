@@ -10,6 +10,11 @@ namespace SewingApp.Pages
     public partial class OrderItemConstructor : UserControl
     {
 
+        public OrderItemConstructor()
+        {
+            InitializeComponent();
+        }
+
         public static OpenFileDialog ImageFileDialog = new OpenFileDialog
         {
             Title = "Выберите изображение",
@@ -17,11 +22,6 @@ namespace SewingApp.Pages
               "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg" +
               "Portable Network Graphic (*.png)|*.png"
         };
-
-        public OrderItemConstructor()
-        {
-            InitializeComponent();
-        }
 
         private void ProductConstructor_Load(object sender, EventArgs e)
         {
